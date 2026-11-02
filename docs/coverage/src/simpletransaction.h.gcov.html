@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-10-28 12:51:50</td>
+            <td class="headerValue">2026-11-02 18:47:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -73,7 +73,7 @@
 <span id="L11"><span class="lineNum">      11</span>              :  * @brief Tracks a sequence of processes that should be treated as one atomic</span>
 <span id="L12"><span class="lineNum">      12</span>              :  * operation.</span>
 <span id="L13"><span class="lineNum">      13</span>              :  */</span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC tlaBgGNC">         172 : class SimpleTransaction {</span></span>
+<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC tlaBgGNC">         179 : class SimpleTransaction {</span></span>
 <span id="L15"><span class="lineNum">      15</span>              :   int transactionDepth{0};</span>
 <span id="L16"><span class="lineNum">      16</span>              :   Enums::PROCESS lastInTransaction{Enums::INVALID};</span>
 <span id="L17"><span class="lineNum">      17</span>              :   std::queue&lt;std::pair&lt;Enums::PROCESS, Enums::PROCESS&gt;&gt; transactionQueue;</span>
@@ -82,7 +82,7 @@
 <span id="L20"><span class="lineNum">      20</span>              :   /**</span>
 <span id="L21"><span class="lineNum">      21</span>              :    * @brief Construct a SimpleTransaction in its initial idle state.</span>
 <span id="L22"><span class="lineNum">      22</span>              :    */</span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         172 :   SimpleTransaction() {}</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">         179 :   SimpleTransaction() {}</span></span>
 <span id="L24"><span class="lineNum">      24</span>              :   /**</span>
 <span id="L25"><span class="lineNum">      25</span>              :    * @brief transactionStart this function is used to mark start of the sequence</span>
 <span id="L26"><span class="lineNum">      26</span>              :    *                         of processes that shall be treated as one</span>

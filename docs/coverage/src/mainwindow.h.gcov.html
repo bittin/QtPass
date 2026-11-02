@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-10-28 12:51:50</td>
+            <td class="headerValue">2026-11-02 18:47:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -106,7 +106,7 @@
 <span id="L44"><span class="lineNum">      44</span>              :  * OTP).</span>
 <span id="L45"><span class="lineNum">      45</span>              :  */</span>
 <span id="L46"><span class="lineNum">      46</span>              : class MainWindow : public QMainWindow {</span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC tlaBgGNC">         324 :   Q_OBJECT</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC tlaBgGNC">         334 :   Q_OBJECT</span></span>
 <span id="L48"><span class="lineNum">      48</span>              : </span>
 <span id="L49"><span class="lineNum">      49</span>              : public:</span>
 <span id="L50"><span class="lineNum">      50</span>              :   /**</span>
@@ -332,168 +332,180 @@
 <span id="L270"><span class="lineNum">     270</span>              :   void endReencryptPath();</span>
 <span id="L271"><span class="lineNum">     271</span>              : </span>
 <span id="L272"><span class="lineNum">     272</span>              : private slots:</span>
-<span id="L273"><span class="lineNum">     273</span>              :   void on_grepButton_toggled(bool checked);</span>
-<span id="L274"><span class="lineNum">     274</span>              :   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);</span>
-<span id="L275"><span class="lineNum">     275</span>              :   void addPassword();</span>
-<span id="L276"><span class="lineNum">     276</span>              :   void addFolder();</span>
-<span id="L277"><span class="lineNum">     277</span>              :   void onEdit();</span>
-<span id="L278"><span class="lineNum">     278</span>              :   void onDelete();</span>
-<span id="L279"><span class="lineNum">     279</span>              :   void onOtp();</span>
-<span id="L280"><span class="lineNum">     280</span>              :   void onUpdate(bool block = false);</span>
-<span id="L281"><span class="lineNum">     281</span>              :   void onUsers();</span>
-<span id="L282"><span class="lineNum">     282</span>              :   void onConfig();</span>
-<span id="L283"><span class="lineNum">     283</span>              :   /**</span>
-<span id="L284"><span class="lineNum">     284</span>              :    * @brief Show the About box: version, project link, licence.</span>
-<span id="L285"><span class="lineNum">     285</span>              :    */</span>
-<span id="L286"><span class="lineNum">     286</span>              :   void showAbout();</span>
-<span id="L287"><span class="lineNum">     287</span>              :   void on_treeView_doubleClicked(const QModelIndex &amp;index);</span>
-<span id="L288"><span class="lineNum">     288</span>              :   void clearPanel(bool notify = true);</span>
-<span id="L289"><span class="lineNum">     289</span>              :   void on_lineEdit_textChanged(const QString &amp;arg1);</span>
-<span id="L290"><span class="lineNum">     290</span>              :   void on_lineEdit_returnPressed();</span>
-<span id="L291"><span class="lineNum">     291</span>              :   void on_profileBox_currentTextChanged(const QString &amp;);</span>
-<span id="L292"><span class="lineNum">     292</span>              :   void showContextMenu(const QPoint &amp;pos);</span>
+<span id="L273"><span class="lineNum">     273</span>              :   /**</span>
+<span id="L274"><span class="lineNum">     274</span>              :    * @brief Fill the profile box from the settings, the active profile</span>
+<span id="L275"><span class="lineNum">     275</span>              :    * selected, without switching profiles while doing so.</span>
+<span id="L276"><span class="lineNum">     276</span>              :    */</span>
+<span id="L277"><span class="lineNum">     277</span>              :   void updateProfileBox();</span>
+<span id="L278"><span class="lineNum">     278</span>              :   /**</span>
+<span id="L279"><span class="lineNum">     279</span>              :    * @brief Enable the profile box only when there is more than one profile,</span>
+<span id="L280"><span class="lineNum">     280</span>              :    * the interface is enabled and the backend is idle.</span>
+<span id="L281"><span class="lineNum">     281</span>              :    */</span>
+<span id="L282"><span class="lineNum">     282</span>              :   void updateProfileBoxEnabled();</span>
+<span id="L283"><span class="lineNum">     283</span>              :   void on_grepButton_toggled(bool checked);</span>
+<span id="L284"><span class="lineNum">     284</span>              :   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);</span>
+<span id="L285"><span class="lineNum">     285</span>              :   void addPassword();</span>
+<span id="L286"><span class="lineNum">     286</span>              :   void addFolder();</span>
+<span id="L287"><span class="lineNum">     287</span>              :   void onEdit();</span>
+<span id="L288"><span class="lineNum">     288</span>              :   void onDelete();</span>
+<span id="L289"><span class="lineNum">     289</span>              :   void onOtp();</span>
+<span id="L290"><span class="lineNum">     290</span>              :   void onUpdate(bool block = false);</span>
+<span id="L291"><span class="lineNum">     291</span>              :   void onUsers();</span>
+<span id="L292"><span class="lineNum">     292</span>              :   void onConfig();</span>
 <span id="L293"><span class="lineNum">     293</span>              :   /**</span>
-<span id="L294"><span class="lineNum">     294</span>              :    * @brief Add the Share submenu for the folder under the cursor: the</span>
-<span id="L295"><span class="lineNum">     295</span>              :    * entries are enabled only where a recipient list and a usable gpg or</span>
-<span id="L296"><span class="lineNum">     296</span>              :    * pass make them work.</span>
-<span id="L297"><span class="lineNum">     297</span>              :    * @param contextMenu The menu being built, which owns the submenu.</span>
-<span id="L298"><span class="lineNum">     298</span>              :    * @param s The settings the executables and the store come from.</span>
-<span id="L299"><span class="lineNum">     299</span>              :    */</span>
-<span id="L300"><span class="lineNum">     300</span>              :   void addShareMenu(QMenu &amp;contextMenu, const AppSettings &amp;s);</span>
-<span id="L301"><span class="lineNum">     301</span>              :   /**</span>
-<span id="L302"><span class="lineNum">     302</span>              :    * @brief Ask before deleting an entry or a folder, naming what goes and</span>
-<span id="L303"><span class="lineNum">     303</span>              :    * warning when the folder holds anything but entries.</span>
-<span id="L304"><span class="lineNum">     304</span>              :    * @param file Store-relative path being deleted.</span>
-<span id="L305"><span class="lineNum">     305</span>              :    * @param isDir Whether it is a folder.</span>
-<span id="L306"><span class="lineNum">     306</span>              :    * @return Whether the user said yes.</span>
-<span id="L307"><span class="lineNum">     307</span>              :    */</span>
-<span id="L308"><span class="lineNum">     308</span>              :   auto confirmDeletion(const QString &amp;file, bool isDir) -&gt; bool;</span>
-<span id="L309"><span class="lineNum">     309</span>              :   /**</span>
-<span id="L310"><span class="lineNum">     310</span>              :    * @brief Ask before removing a folder that is a link, which takes the link</span>
-<span id="L311"><span class="lineNum">     311</span>              :    * and leaves what it points to.</span>
-<span id="L312"><span class="lineNum">     312</span>              :    * @param file Store-relative path of the link.</span>
-<span id="L313"><span class="lineNum">     313</span>              :    * @return Whether the user said yes.</span>
-<span id="L314"><span class="lineNum">     314</span>              :    */</span>
-<span id="L315"><span class="lineNum">     315</span>              :   auto confirmLinkRemoval(const QString &amp;file) -&gt; bool;</span>
-<span id="L316"><span class="lineNum">     316</span>              :   void showBrowserContextMenu(const QPoint &amp;pos);</span>
-<span id="L317"><span class="lineNum">     317</span>              :   void openFolder();</span>
-<span id="L318"><span class="lineNum">     318</span>              :   void renameFolder();</span>
-<span id="L319"><span class="lineNum">     319</span>              :   void editPassword(const QString &amp;);</span>
-<span id="L320"><span class="lineNum">     320</span>              :   void renamePassword();</span>
-<span id="L321"><span class="lineNum">     321</span>              :   void focusInput();</span>
-<span id="L322"><span class="lineNum">     322</span>              :   void copyPasswordFromTreeview();</span>
-<span id="L323"><span class="lineNum">     323</span>              :   void onTimeoutSearch();</span>
-<span id="L324"><span class="lineNum">     324</span>              : </span>
-<span id="L325"><span class="lineNum">     325</span>              : private:</span>
-<span id="L326"><span class="lineNum">     326</span>              :   QtPass *m_qtPass;</span>
-<span id="L327"><span class="lineNum">     327</span>              :   QScopedPointer&lt;Ui::MainWindow&gt; ui;</span>
-<span id="L328"><span class="lineNum">     328</span>              :   GrepSearchController m_grep;</span>
-<span id="L329"><span class="lineNum">     329</span>              :   PasswordDisplayPanel *m_displayPanel = nullptr;</span>
-<span id="L330"><span class="lineNum">     330</span>              :   bool m_firstShowCompleted = false;</span>
-<span id="L331"><span class="lineNum">     331</span>              :   /// Whether the application palette changed in this window's lifetime. A</span>
-<span id="L332"><span class="lineNum">     332</span>              :   /// header palette a style stamps on the bars is only suspect after that:</span>
-<span id="L333"><span class="lineNum">     333</span>              :   /// at startup the style's colours are fresh, however far from the window</span>
-<span id="L334"><span class="lineNum">     334</span>              :   /// colour a scheme puts its header.</span>
-<span id="L335"><span class="lineNum">     335</span>              :   bool m_themeSwitched = false;</span>
-<span id="L336"><span class="lineNum">     336</span>              :   /// Entry the display panel is currently rendering. The tree's currentIndex</span>
-<span id="L337"><span class="lineNum">     337</span>              :   /// can move without a repaint (arrow keys and right-click do not emit</span>
-<span id="L338"><span class="lineNum">     338</span>              :   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs</span>
-<span id="L339"><span class="lineNum">     339</span>              :   /// to the selected entry.</span>
-<span id="L340"><span class="lineNum">     340</span>              :   QString m_shownFile;</span>
-<span id="L341"><span class="lineNum">     341</span>              :   /// Entry the in-flight OTP request asked for; empty when none. finishedShow</span>
-<span id="L342"><span class="lineNum">     342</span>              :   /// names its file, so otpFromFileToClipboard() simply ignores everything</span>
-<span id="L343"><span class="lineNum">     343</span>              :   /// else and passShowHandler() skips the password copy for this one.</span>
-<span id="L344"><span class="lineNum">     344</span>              :   QString m_otpRequestFile;</span>
-<span id="L345"><span class="lineNum">     345</span>              :   /// Entry the in-flight Ctrl+C request asked for; empty when none. Each</span>
-<span id="L346"><span class="lineNum">     346</span>              :   /// finishedShow is matched to it by file, so a second Ctrl+C on another</span>
-<span id="L347"><span class="lineNum">     347</span>              :   /// entry just replaces the request instead of racing it.</span>
-<span id="L348"><span class="lineNum">     348</span>              :   QString m_copyRequestFile;</span>
-<span id="L349"><span class="lineNum">     349</span>              :   // The process output console is a QDockWidget at the bottom dock area,</span>
-<span id="L350"><span class="lineNum">     350</span>              :   // created programmatically. It isn't part of the .ui because uic places</span>
-<span id="L351"><span class="lineNum">     351</span>              :   // its QMainWindow children in centralWidget / statusBar / menuBar /</span>
-<span id="L352"><span class="lineNum">     352</span>              :   // toolBars / dock-widget slots only — a sibling widget at the</span>
-<span id="L353"><span class="lineNum">     353</span>              :   // QMainWindow level isn't laid out and ends up obscuring the</span>
-<span id="L354"><span class="lineNum">     354</span>              :   // centralWidget. See #1192 for the symptom.</span>
-<span id="L355"><span class="lineNum">     355</span>              :   ProcessOutputPanel *m_processOutput = nullptr;</span>
-<span id="L356"><span class="lineNum">     356</span>              :   /// The store as shown in the tree: models, view setup, path mapping.</span>
-<span id="L357"><span class="lineNum">     357</span>              :   StoreTree *m_tree = nullptr;</span>
-<span id="L358"><span class="lineNum">     358</span>              :   QTimer clearPanelTimer, searchTimer;</span>
-<span id="L359"><span class="lineNum">     359</span>              :   // Re-enables the UI if a backend operation disables it but never reports</span>
-<span id="L360"><span class="lineNum">     360</span>              :   // completion (see setUiElementsEnabled).</span>
-<span id="L361"><span class="lineNum">     361</span>              :   QTimer m_uiWatchdog;</span>
-<span id="L362"><span class="lineNum">     362</span>              :   static constexpr int UiWatchdogMs = 30000;</span>
-<span id="L363"><span class="lineNum">     363</span>              :   /// Progress/cancel dialog shown between startReencryptPath() and</span>
-<span id="L364"><span class="lineNum">     364</span>              :   /// endReencryptPath(); QPointer so a closed dialog reads back as null.</span>
-<span id="L365"><span class="lineNum">     365</span>              :   QPointer&lt;QProgressDialog&gt; m_reencryptProgress;</span>
-<span id="L366"><span class="lineNum">     366</span>              :   /// True between startReencryptPath() and endReencryptPath(). While set,</span>
-<span id="L367"><span class="lineNum">     367</span>              :   /// setUiElementsEnabled(true) is ignored so the git completions queued by</span>
-<span id="L368"><span class="lineNum">     368</span>              :   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface</span>
-<span id="L369"><span class="lineNum">     369</span>              :   /// while the re-encryption worker is still rewriting files.</span>
-<span id="L370"><span class="lineNum">     370</span>              :   bool m_reencryptRunning = false;</span>
-<span id="L371"><span class="lineNum">     371</span>              :   TrayIcon *m_tray{};</span>
-<span id="L372"><span class="lineNum">     372</span>              :   /// Whether the constructor ended with a usable configuration; main()</span>
-<span id="L373"><span class="lineNum">     373</span>              :   /// consults it via initSucceeded() to decide whether the application should</span>
-<span id="L374"><span class="lineNum">     374</span>              :   /// start at all.</span>
-<span id="L375"><span class="lineNum">     375</span>              :   bool m_initSucceeded = false;</span>
-<span id="L376"><span class="lineNum">     376</span>              :   /// No usable configuration has been accepted yet: config() runs the</span>
-<span id="L377"><span class="lineNum">     377</span>              :   /// first-run wizard and defaults to pass when it is installed.</span>
-<span id="L378"><span class="lineNum">     378</span>              :   bool m_freshStart = true;</span>
-<span id="L379"><span class="lineNum">     379</span>              : </span>
-<span id="L380"><span class="lineNum">     380</span>              :   void initToolBarButtons();</span>
-<span id="L381"><span class="lineNum">     381</span>              :   void initStatusBar();</span>
-<span id="L382"><span class="lineNum">     382</span>              :   /// Connect QtPass's and both backends' signals (the active backend can</span>
-<span id="L383"><span class="lineNum">     383</span>              :   /// change through the configuration dialog without a restart).</span>
-<span id="L384"><span class="lineNum">     384</span>              :   void connectBackends();</span>
-<span id="L385"><span class="lineNum">     385</span>              :   /// Font, wrapping and link handling of the text browser, per the settings.</span>
-<span id="L386"><span class="lineNum">     386</span>              :   void initTextBrowser();</span>
-<span id="L387"><span class="lineNum">     387</span>              :   /// The grid of decrypted fields and what its buttons ask for.</span>
-<span id="L388"><span class="lineNum">     388</span>              :   void initDisplayPanel();</span>
-<span id="L389"><span class="lineNum">     389</span>              :   /// The panel-clear and search timers, and the watchdog that re-enables</span>
-<span id="L390"><span class="lineNum">     390</span>              :   /// the UI when an operation never signals its end.</span>
-<span id="L391"><span class="lineNum">     391</span>              :   void initTimers();</span>
-<span id="L392"><span class="lineNum">     392</span>              :   /// The Process Output dock, its Settings-menu toggle, and the feed of</span>
-<span id="L393"><span class="lineNum">     393</span>              :   /// non-secret process output into it.</span>
-<span id="L394"><span class="lineNum">     394</span>              :   void initProcessOutput();</span>
-<span id="L395"><span class="lineNum">     395</span>              :   void connectPassSignals(Pass *pass);</span>
-<span id="L396"><span class="lineNum">     396</span>              : </span>
-<span id="L397"><span class="lineNum">     397</span>              :   void selectFirstFile();</span>
-<span id="L398"><span class="lineNum">     398</span>              :   auto firstFile(QModelIndex parentIndex) -&gt; QModelIndex;</span>
-<span id="L399"><span class="lineNum">     399</span>              :   auto getFile(const QModelIndex &amp;, bool) -&gt; QString;</span>
-<span id="L400"><span class="lineNum">     400</span>              :   void setPassword(const QString &amp;, bool isNew = true);</span>
-<span id="L401"><span class="lineNum">     401</span>              :   auto confirmPathInStore(const QString &amp;candidate) -&gt; bool;</span>
-<span id="L402"><span class="lineNum">     402</span>              : </span>
-<span id="L403"><span class="lineNum">     403</span>              :   void updateProfileBox();</span>
-<span id="L404"><span class="lineNum">     404</span>              :   void initTrayIcon();</span>
-<span id="L405"><span class="lineNum">     405</span>              :   void destroyTrayIcon();</span>
-<span id="L406"><span class="lineNum">     406</span>              :   void reencryptPath(const QString &amp;dir);</span>
-<span id="L407"><span class="lineNum">     407</span>              :   void exportPublicKey();</span>
-<span id="L408"><span class="lineNum">     408</span>              :   void addRecipient(const QString &amp;dir);</span>
-<span id="L409"><span class="lineNum">     409</span>              :   auto refuseLinkedFolder(const QString &amp;dir) -&gt; bool;</span>
-<span id="L410"><span class="lineNum">     410</span>              :   void showShareHelp();</span>
-<span id="L411"><span class="lineNum">     411</span>              : </span>
-<span id="L412"><span class="lineNum">     412</span>              :   void applyTextBrowserSettings();</span>
-<span id="L413"><span class="lineNum">     413</span>              :   void applyWindowFlagsSettings();</span>
-<span id="L414"><span class="lineNum">     414</span>              :   void saveWindowState();</span>
+<span id="L294"><span class="lineNum">     294</span>              :    * @brief Show the About box: version, project link, licence.</span>
+<span id="L295"><span class="lineNum">     295</span>              :    */</span>
+<span id="L296"><span class="lineNum">     296</span>              :   void showAbout();</span>
+<span id="L297"><span class="lineNum">     297</span>              :   void on_treeView_doubleClicked(const QModelIndex &amp;index);</span>
+<span id="L298"><span class="lineNum">     298</span>              :   void clearPanel(bool notify = true);</span>
+<span id="L299"><span class="lineNum">     299</span>              :   void on_lineEdit_textChanged(const QString &amp;arg1);</span>
+<span id="L300"><span class="lineNum">     300</span>              :   void on_lineEdit_returnPressed();</span>
+<span id="L301"><span class="lineNum">     301</span>              :   void on_profileBox_currentTextChanged(const QString &amp;);</span>
+<span id="L302"><span class="lineNum">     302</span>              :   void showContextMenu(const QPoint &amp;pos);</span>
+<span id="L303"><span class="lineNum">     303</span>              :   /**</span>
+<span id="L304"><span class="lineNum">     304</span>              :    * @brief Add the Share submenu for the folder under the cursor: the</span>
+<span id="L305"><span class="lineNum">     305</span>              :    * entries are enabled only where a recipient list and a usable gpg or</span>
+<span id="L306"><span class="lineNum">     306</span>              :    * pass make them work.</span>
+<span id="L307"><span class="lineNum">     307</span>              :    * @param contextMenu The menu being built, which owns the submenu.</span>
+<span id="L308"><span class="lineNum">     308</span>              :    * @param s The settings the executables and the store come from.</span>
+<span id="L309"><span class="lineNum">     309</span>              :    */</span>
+<span id="L310"><span class="lineNum">     310</span>              :   void addShareMenu(QMenu &amp;contextMenu, const AppSettings &amp;s);</span>
+<span id="L311"><span class="lineNum">     311</span>              :   /**</span>
+<span id="L312"><span class="lineNum">     312</span>              :    * @brief Ask before deleting an entry or a folder, naming what goes and</span>
+<span id="L313"><span class="lineNum">     313</span>              :    * warning when the folder holds anything but entries.</span>
+<span id="L314"><span class="lineNum">     314</span>              :    * @param file Store-relative path being deleted.</span>
+<span id="L315"><span class="lineNum">     315</span>              :    * @param isDir Whether it is a folder.</span>
+<span id="L316"><span class="lineNum">     316</span>              :    * @return Whether the user said yes.</span>
+<span id="L317"><span class="lineNum">     317</span>              :    */</span>
+<span id="L318"><span class="lineNum">     318</span>              :   auto confirmDeletion(const QString &amp;file, bool isDir) -&gt; bool;</span>
+<span id="L319"><span class="lineNum">     319</span>              :   /**</span>
+<span id="L320"><span class="lineNum">     320</span>              :    * @brief Ask before removing a folder that is a link, which takes the link</span>
+<span id="L321"><span class="lineNum">     321</span>              :    * and leaves what it points to.</span>
+<span id="L322"><span class="lineNum">     322</span>              :    * @param file Store-relative path of the link.</span>
+<span id="L323"><span class="lineNum">     323</span>              :    * @return Whether the user said yes.</span>
+<span id="L324"><span class="lineNum">     324</span>              :    */</span>
+<span id="L325"><span class="lineNum">     325</span>              :   auto confirmLinkRemoval(const QString &amp;file) -&gt; bool;</span>
+<span id="L326"><span class="lineNum">     326</span>              :   void showBrowserContextMenu(const QPoint &amp;pos);</span>
+<span id="L327"><span class="lineNum">     327</span>              :   void openFolder();</span>
+<span id="L328"><span class="lineNum">     328</span>              :   void renameFolder();</span>
+<span id="L329"><span class="lineNum">     329</span>              :   void editPassword(const QString &amp;);</span>
+<span id="L330"><span class="lineNum">     330</span>              :   void renamePassword();</span>
+<span id="L331"><span class="lineNum">     331</span>              :   void focusInput();</span>
+<span id="L332"><span class="lineNum">     332</span>              :   void copyPasswordFromTreeview();</span>
+<span id="L333"><span class="lineNum">     333</span>              :   void onTimeoutSearch();</span>
+<span id="L334"><span class="lineNum">     334</span>              : </span>
+<span id="L335"><span class="lineNum">     335</span>              : private:</span>
+<span id="L336"><span class="lineNum">     336</span>              :   QtPass *m_qtPass;</span>
+<span id="L337"><span class="lineNum">     337</span>              :   QScopedPointer&lt;Ui::MainWindow&gt; ui;</span>
+<span id="L338"><span class="lineNum">     338</span>              :   GrepSearchController m_grep;</span>
+<span id="L339"><span class="lineNum">     339</span>              :   PasswordDisplayPanel *m_displayPanel = nullptr;</span>
+<span id="L340"><span class="lineNum">     340</span>              :   bool m_firstShowCompleted = false;</span>
+<span id="L341"><span class="lineNum">     341</span>              :   /// Whether the application palette changed in this window's lifetime. A</span>
+<span id="L342"><span class="lineNum">     342</span>              :   /// header palette a style stamps on the bars is only suspect after that:</span>
+<span id="L343"><span class="lineNum">     343</span>              :   /// at startup the style's colours are fresh, however far from the window</span>
+<span id="L344"><span class="lineNum">     344</span>              :   /// colour a scheme puts its header.</span>
+<span id="L345"><span class="lineNum">     345</span>              :   bool m_themeSwitched = false;</span>
+<span id="L346"><span class="lineNum">     346</span>              :   /// Entry the display panel is currently rendering. The tree's currentIndex</span>
+<span id="L347"><span class="lineNum">     347</span>              :   /// can move without a repaint (arrow keys and right-click do not emit</span>
+<span id="L348"><span class="lineNum">     348</span>              :   /// QTreeView::clicked), so onOtp() must not assume the visible code belongs</span>
+<span id="L349"><span class="lineNum">     349</span>              :   /// to the selected entry.</span>
+<span id="L350"><span class="lineNum">     350</span>              :   QString m_shownFile;</span>
+<span id="L351"><span class="lineNum">     351</span>              :   /// Entry the in-flight OTP request asked for; empty when none. finishedShow</span>
+<span id="L352"><span class="lineNum">     352</span>              :   /// names its file, so otpFromFileToClipboard() simply ignores everything</span>
+<span id="L353"><span class="lineNum">     353</span>              :   /// else and passShowHandler() skips the password copy for this one.</span>
+<span id="L354"><span class="lineNum">     354</span>              :   QString m_otpRequestFile;</span>
+<span id="L355"><span class="lineNum">     355</span>              :   /// Entry the in-flight Ctrl+C request asked for; empty when none. Each</span>
+<span id="L356"><span class="lineNum">     356</span>              :   /// finishedShow is matched to it by file, so a second Ctrl+C on another</span>
+<span id="L357"><span class="lineNum">     357</span>              :   /// entry just replaces the request instead of racing it.</span>
+<span id="L358"><span class="lineNum">     358</span>              :   QString m_copyRequestFile;</span>
+<span id="L359"><span class="lineNum">     359</span>              :   // The process output console is a QDockWidget at the bottom dock area,</span>
+<span id="L360"><span class="lineNum">     360</span>              :   // created programmatically. It isn't part of the .ui because uic places</span>
+<span id="L361"><span class="lineNum">     361</span>              :   // its QMainWindow children in centralWidget / statusBar / menuBar /</span>
+<span id="L362"><span class="lineNum">     362</span>              :   // toolBars / dock-widget slots only — a sibling widget at the</span>
+<span id="L363"><span class="lineNum">     363</span>              :   // QMainWindow level isn't laid out and ends up obscuring the</span>
+<span id="L364"><span class="lineNum">     364</span>              :   // centralWidget. See #1192 for the symptom.</span>
+<span id="L365"><span class="lineNum">     365</span>              :   ProcessOutputPanel *m_processOutput = nullptr;</span>
+<span id="L366"><span class="lineNum">     366</span>              :   /// The store as shown in the tree: models, view setup, path mapping.</span>
+<span id="L367"><span class="lineNum">     367</span>              :   StoreTree *m_tree = nullptr;</span>
+<span id="L368"><span class="lineNum">     368</span>              :   QTimer clearPanelTimer, searchTimer;</span>
+<span id="L369"><span class="lineNum">     369</span>              :   // Re-enables the UI if a backend operation disables it but never reports</span>
+<span id="L370"><span class="lineNum">     370</span>              :   // completion (see setUiElementsEnabled).</span>
+<span id="L371"><span class="lineNum">     371</span>              :   QTimer m_uiWatchdog;</span>
+<span id="L372"><span class="lineNum">     372</span>              :   static constexpr int UiWatchdogMs = 30000;</span>
+<span id="L373"><span class="lineNum">     373</span>              :   /// Progress/cancel dialog shown between startReencryptPath() and</span>
+<span id="L374"><span class="lineNum">     374</span>              :   /// endReencryptPath(); QPointer so a closed dialog reads back as null.</span>
+<span id="L375"><span class="lineNum">     375</span>              :   QPointer&lt;QProgressDialog&gt; m_reencryptProgress;</span>
+<span id="L376"><span class="lineNum">     376</span>              :   /// True between startReencryptPath() and endReencryptPath(). While set,</span>
+<span id="L377"><span class="lineNum">     377</span>              :   /// setUiElementsEnabled(true) is ignored so the git completions queued by</span>
+<span id="L378"><span class="lineNum">     378</span>              :   /// Init/Move/Copy (or the UI watchdog) cannot re-enable the interface</span>
+<span id="L379"><span class="lineNum">     379</span>              :   /// while the re-encryption worker is still rewriting files.</span>
+<span id="L380"><span class="lineNum">     380</span>              :   bool m_reencryptRunning = false;</span>
+<span id="L381"><span class="lineNum">     381</span>              :   /// What setUiElementsEnabled() last set: updateProfileBox() keeps the</span>
+<span id="L382"><span class="lineNum">     382</span>              :   /// profile box disabled while an operation runs.</span>
+<span id="L383"><span class="lineNum">     383</span>              :   bool m_uiEnabled = true;</span>
+<span id="L384"><span class="lineNum">     384</span>              :   TrayIcon *m_tray{};</span>
+<span id="L385"><span class="lineNum">     385</span>              :   /// Whether the constructor ended with a usable configuration; main()</span>
+<span id="L386"><span class="lineNum">     386</span>              :   /// consults it via initSucceeded() to decide whether the application should</span>
+<span id="L387"><span class="lineNum">     387</span>              :   /// start at all.</span>
+<span id="L388"><span class="lineNum">     388</span>              :   bool m_initSucceeded = false;</span>
+<span id="L389"><span class="lineNum">     389</span>              :   /// No usable configuration has been accepted yet: config() runs the</span>
+<span id="L390"><span class="lineNum">     390</span>              :   /// first-run wizard and defaults to pass when it is installed.</span>
+<span id="L391"><span class="lineNum">     391</span>              :   bool m_freshStart = true;</span>
+<span id="L392"><span class="lineNum">     392</span>              : </span>
+<span id="L393"><span class="lineNum">     393</span>              :   void initToolBarButtons();</span>
+<span id="L394"><span class="lineNum">     394</span>              :   void initStatusBar();</span>
+<span id="L395"><span class="lineNum">     395</span>              :   /// Connect QtPass's and both backends' signals (the active backend can</span>
+<span id="L396"><span class="lineNum">     396</span>              :   /// change through the configuration dialog without a restart).</span>
+<span id="L397"><span class="lineNum">     397</span>              :   void connectBackends();</span>
+<span id="L398"><span class="lineNum">     398</span>              :   /// Font, wrapping and link handling of the text browser, per the settings.</span>
+<span id="L399"><span class="lineNum">     399</span>              :   void initTextBrowser();</span>
+<span id="L400"><span class="lineNum">     400</span>              :   /// The grid of decrypted fields and what its buttons ask for.</span>
+<span id="L401"><span class="lineNum">     401</span>              :   void initDisplayPanel();</span>
+<span id="L402"><span class="lineNum">     402</span>              :   /// The panel-clear and search timers, and the watchdog that re-enables</span>
+<span id="L403"><span class="lineNum">     403</span>              :   /// the UI when an operation never signals its end.</span>
+<span id="L404"><span class="lineNum">     404</span>              :   void initTimers();</span>
+<span id="L405"><span class="lineNum">     405</span>              :   /// The Process Output dock, its Settings-menu toggle, and the feed of</span>
+<span id="L406"><span class="lineNum">     406</span>              :   /// non-secret process output into it.</span>
+<span id="L407"><span class="lineNum">     407</span>              :   void initProcessOutput();</span>
+<span id="L408"><span class="lineNum">     408</span>              :   void connectPassSignals(Pass *pass);</span>
+<span id="L409"><span class="lineNum">     409</span>              : </span>
+<span id="L410"><span class="lineNum">     410</span>              :   void selectFirstFile();</span>
+<span id="L411"><span class="lineNum">     411</span>              :   auto firstFile(QModelIndex parentIndex) -&gt; QModelIndex;</span>
+<span id="L412"><span class="lineNum">     412</span>              :   auto getFile(const QModelIndex &amp;, bool) -&gt; QString;</span>
+<span id="L413"><span class="lineNum">     413</span>              :   void setPassword(const QString &amp;, bool isNew = true);</span>
+<span id="L414"><span class="lineNum">     414</span>              :   auto confirmPathInStore(const QString &amp;candidate) -&gt; bool;</span>
 <span id="L415"><span class="lineNum">     415</span>              : </span>
-<span id="L416"><span class="lineNum">     416</span>              :   /**</span>
-<span id="L417"><span class="lineNum">     417</span>              :    * @brief Show Push and Pull only when Git is in use; enable them only while</span>
-<span id="L418"><span class="lineNum">     418</span>              :    *        the interface is.</span>
-<span id="L419"><span class="lineNum">     419</span>              :    * @param uiEnabled false while an operation runs</span>
-<span id="L420"><span class="lineNum">     420</span>              :    */</span>
-<span id="L421"><span class="lineNum">     421</span>              :   void updateGitButtonVisibility(bool uiEnabled = true);</span>
-<span id="L422"><span class="lineNum">     422</span>              :   /**</span>
-<span id="L423"><span class="lineNum">     423</span>              :    * @brief Refresh the OTP toolbar action from settings.</span>
-<span id="L424"><span class="lineNum">     424</span>              :    * @param uiEnabled false while a backend operation is in flight, so the</span>
-<span id="L425"><span class="lineNum">     425</span>              :    *        action is disabled along with the rest of the UI.</span>
-<span id="L426"><span class="lineNum">     426</span>              :    */</span>
-<span id="L427"><span class="lineNum">     427</span>              :   void updateOtpButtonVisibility(bool uiEnabled = true);</span>
-<span id="L428"><span class="lineNum">     428</span>              :   void updateGrepButtonVisibility();</span>
-<span id="L429"><span class="lineNum">     429</span>              :   void enableGitButtons(const bool &amp;);</span>
-<span id="L430"><span class="lineNum">     430</span>              : </span>
-<span id="L431"><span class="lineNum">     431</span>              :   void updateProcessOutputVisibility();</span>
-<span id="L432"><span class="lineNum">     432</span>              : };</span>
-<span id="L433"><span class="lineNum">     433</span>              : </span>
-<span id="L434"><span class="lineNum">     434</span>              : #endif // SRC_MAINWINDOW_H_</span>
+<span id="L416"><span class="lineNum">     416</span>              :   void initTrayIcon();</span>
+<span id="L417"><span class="lineNum">     417</span>              :   void destroyTrayIcon();</span>
+<span id="L418"><span class="lineNum">     418</span>              :   void reencryptPath(const QString &amp;dir);</span>
+<span id="L419"><span class="lineNum">     419</span>              :   void exportPublicKey();</span>
+<span id="L420"><span class="lineNum">     420</span>              :   void addRecipient(const QString &amp;dir);</span>
+<span id="L421"><span class="lineNum">     421</span>              :   auto refuseLinkedFolder(const QString &amp;dir) -&gt; bool;</span>
+<span id="L422"><span class="lineNum">     422</span>              :   void showShareHelp();</span>
+<span id="L423"><span class="lineNum">     423</span>              : </span>
+<span id="L424"><span class="lineNum">     424</span>              :   void applyTextBrowserSettings();</span>
+<span id="L425"><span class="lineNum">     425</span>              :   void applyWindowFlagsSettings();</span>
+<span id="L426"><span class="lineNum">     426</span>              :   void saveWindowState();</span>
+<span id="L427"><span class="lineNum">     427</span>              : </span>
+<span id="L428"><span class="lineNum">     428</span>              :   /**</span>
+<span id="L429"><span class="lineNum">     429</span>              :    * @brief Show Push and Pull only when Git is in use; enable them only while</span>
+<span id="L430"><span class="lineNum">     430</span>              :    *        the interface is.</span>
+<span id="L431"><span class="lineNum">     431</span>              :    * @param uiEnabled false while an operation runs</span>
+<span id="L432"><span class="lineNum">     432</span>              :    */</span>
+<span id="L433"><span class="lineNum">     433</span>              :   void updateGitButtonVisibility(bool uiEnabled = true);</span>
+<span id="L434"><span class="lineNum">     434</span>              :   /**</span>
+<span id="L435"><span class="lineNum">     435</span>              :    * @brief Refresh the OTP toolbar action from settings.</span>
+<span id="L436"><span class="lineNum">     436</span>              :    * @param uiEnabled false while a backend operation is in flight, so the</span>
+<span id="L437"><span class="lineNum">     437</span>              :    *        action is disabled along with the rest of the UI.</span>
+<span id="L438"><span class="lineNum">     438</span>              :    */</span>
+<span id="L439"><span class="lineNum">     439</span>              :   void updateOtpButtonVisibility(bool uiEnabled = true);</span>
+<span id="L440"><span class="lineNum">     440</span>              :   void updateGrepButtonVisibility();</span>
+<span id="L441"><span class="lineNum">     441</span>              :   void enableGitButtons(const bool &amp;);</span>
+<span id="L442"><span class="lineNum">     442</span>              : </span>
+<span id="L443"><span class="lineNum">     443</span>              :   void updateProcessOutputVisibility();</span>
+<span id="L444"><span class="lineNum">     444</span>              : };</span>
+<span id="L445"><span class="lineNum">     445</span>              : </span>
+<span id="L446"><span class="lineNum">     446</span>              : #endif // SRC_MAINWINDOW_H_</span>
         </pre>
               </td>
             </tr>

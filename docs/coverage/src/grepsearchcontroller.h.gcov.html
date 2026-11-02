@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-10-28 12:51:50</td>
+            <td class="headerValue">2026-11-02 18:47:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -77,7 +77,7 @@
 <span id="L15"><span class="lineNum">      15</span>              :  * results). It holds no widgets — MainWindow keeps those and reacts to the</span>
 <span id="L16"><span class="lineNum">      16</span>              :  * returned outcomes.</span>
 <span id="L17"><span class="lineNum">      17</span>              :  */</span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC tlaBgGNC">         122 : class GrepSearchController {</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC tlaBgGNC">         125 : class GrepSearchController {</span></span>
 <span id="L19"><span class="lineNum">      19</span>              : public:</span>
 <span id="L20"><span class="lineNum">      20</span>              :   /**</span>
 <span id="L21"><span class="lineNum">      21</span>              :    * @brief Outcome of a search-completion transition.</span>
@@ -91,12 +91,12 @@
 <span id="L29"><span class="lineNum">      29</span>              :    * @brief Whether content-search mode is currently active.</span>
 <span id="L30"><span class="lineNum">      30</span>              :    * @return true if in grep mode.</span>
 <span id="L31"><span class="lineNum">      31</span>              :    */</span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         149 :   auto inGrepMode() const -&gt; bool { return m_mode; }</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         157 :   auto inGrepMode() const -&gt; bool { return m_mode; }</span></span>
 <span id="L33"><span class="lineNum">      33</span>              : </span>
 <span id="L34"><span class="lineNum">      34</span>              :   /**</span>
 <span id="L35"><span class="lineNum">      35</span>              :    * @brief Enter content-search mode (search button toggled on).</span>
 <span id="L36"><span class="lineNum">      36</span>              :    */</span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           6 :   void enterGrepMode() { m_mode = true; }</span></span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           7 :   void enterGrepMode() { m_mode = true; }</span></span>
 <span id="L38"><span class="lineNum">      38</span>              : </span>
 <span id="L39"><span class="lineNum">      39</span>              :   /**</span>
 <span id="L40"><span class="lineNum">      40</span>              :    * @brief Leave content-search mode (search button toggled off).</span>
@@ -106,8 +106,8 @@
 <span id="L44"><span class="lineNum">      44</span>              :    * @return true if a busy search was interrupted (restore the wait cursor).</span>
 <span id="L45"><span class="lineNum">      45</span>              :    */</span>
 <span id="L46"><span class="lineNum">      46</span>              :   auto leaveGrepMode() -&gt; bool {</span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">           4 :     m_mode = false;</span></span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           4 :     if (m_busy) {</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">           5 :     m_mode = false;</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           5 :     if (m_busy) {</span></span>
 <span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">           1 :       m_busy = false;</span></span>
 <span id="L50"><span class="lineNum">      50</span> <span class="tlaGNC">           1 :       m_cancelled = true;</span></span>
 <span id="L51"><span class="lineNum">      51</span>              :       return true;</span>

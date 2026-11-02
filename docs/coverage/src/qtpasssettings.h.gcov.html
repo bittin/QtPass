@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-10-28 12:51:50</td>
+            <td class="headerValue">2026-11-02 18:47:09</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryLo">50.0&nbsp;%</td>
@@ -340,9 +340,15 @@
 <span id="L278"><span class="lineNum">     278</span>              :    * @return Pointer to imitate pass backend.</span>
 <span id="L279"><span class="lineNum">     279</span>              :    */</span>
 <span id="L280"><span class="lineNum">     280</span>              :   static auto getImitatePass() -&gt; ImitatePass *;</span>
-<span id="L281"><span class="lineNum">     281</span>              : };</span>
-<span id="L282"><span class="lineNum">     282</span>              : </span>
-<span id="L283"><span class="lineNum">     283</span>              : #endif // SRC_QTPASSSETTINGS_H_</span>
+<span id="L281"><span class="lineNum">     281</span>              :   /**</span>
+<span id="L282"><span class="lineNum">     282</span>              :    * @brief Whether no backend, the active one or one kept from before a</span>
+<span id="L283"><span class="lineNum">     283</span>              :    * switch, runs or waits for anything (PassBackendFactory::isIdle()).</span>
+<span id="L284"><span class="lineNum">     284</span>              :    * @return true when all are idle.</span>
+<span id="L285"><span class="lineNum">     285</span>              :    */</span>
+<span id="L286"><span class="lineNum">     286</span>              :   static auto backendsIdle() -&gt; bool;</span>
+<span id="L287"><span class="lineNum">     287</span>              : };</span>
+<span id="L288"><span class="lineNum">     288</span>              : </span>
+<span id="L289"><span class="lineNum">     289</span>              : #endif // SRC_QTPASSSETTINGS_H_</span>
         </pre>
               </td>
             </tr>
