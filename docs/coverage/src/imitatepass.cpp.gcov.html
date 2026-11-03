@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-02 18:47:09</td>
+            <td class="headerValue">2026-11-03 15:04:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -142,17 +142,17 @@
 <span id="L80"><span class="lineNum">      80</span> <span class="tlaGNC">         566 :   return execBlocking(app, args, QString(), process_out, process_err);</span></span>
 <span id="L81"><span class="lineNum">      81</span>              : }</span>
 <span id="L82"><span class="lineNum">      82</span>              : </span>
-<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         496 : auto ImitatePass::translatePathForWsl(const QString &amp;path,</span></span>
+<span id="L83"><span class="lineNum">      83</span> <span class="tlaGNC">         497 : auto ImitatePass::translatePathForWsl(const QString &amp;path,</span></span>
 <span id="L84"><span class="lineNum">      84</span>              :                                       const QString &amp;exe) const -&gt; QString {</span>
-<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         496 :   return Executor::translatePathForWsl(path, exe);</span></span>
+<span id="L85"><span class="lineNum">      85</span> <span class="tlaGNC">         497 :   return Executor::translatePathForWsl(path, exe);</span></span>
 <span id="L86"><span class="lineNum">      86</span>              : }</span>
 <span id="L87"><span class="lineNum">      87</span>              : </span>
 <span id="L88"><span class="lineNum">      88</span> <span class="tlaGNC">         134 : auto ImitatePass::pgit(const QString &amp;path) const -&gt; QString {</span></span>
 <span id="L89"><span class="lineNum">      89</span> <span class="tlaGNC">         134 :   return translatePathForWsl(path, m_settings.gitExecutable);</span></span>
 <span id="L90"><span class="lineNum">      90</span>              : }</span>
 <span id="L91"><span class="lineNum">      91</span>              : </span>
-<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         362 : auto ImitatePass::pgpg(const QString &amp;path) const -&gt; QString {</span></span>
-<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">         362 :   return translatePathForWsl(path, m_settings.gpgExecutable);</span></span>
+<span id="L92"><span class="lineNum">      92</span> <span class="tlaGNC">         363 : auto ImitatePass::pgpg(const QString &amp;path) const -&gt; QString {</span></span>
+<span id="L93"><span class="lineNum">      93</span> <span class="tlaGNC">         363 :   return translatePathForWsl(path, m_settings.gpgExecutable);</span></span>
 <span id="L94"><span class="lineNum">      94</span>              : }</span>
 <span id="L95"><span class="lineNum">      95</span>              : </span>
 <span id="L96"><span class="lineNum">      96</span> <span class="tlaGNC">           1 : void ImitatePass::GitInit() {</span></span>
@@ -187,17 +187,17 @@
 <span id="L125"><span class="lineNum">     125</span>              :   }</span>
 <span id="L126"><span class="lineNum">     126</span> <span class="tlaGNC">           8 : }</span></span>
 <span id="L127"><span class="lineNum">     127</span>              : </span>
-<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          46 : void ImitatePass::Show(QString file) {</span></span>
-<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">          92 :   if (refuseLinkedPath(file + &quot;.gpg&quot;)) {</span></span>
+<span id="L128"><span class="lineNum">     128</span> <span class="tlaGNC">          47 : void ImitatePass::Show(QString file) {</span></span>
+<span id="L129"><span class="lineNum">     129</span> <span class="tlaGNC">          94 :   if (refuseLinkedPath(file + &quot;.gpg&quot;)) {</span></span>
 <span id="L130"><span class="lineNum">     130</span> <span class="tlaGNC">           4 :     return;</span></span>
 <span id="L131"><span class="lineNum">     131</span>              :   }</span>
 <span id="L132"><span class="lineNum">     132</span>              :   queueShow(file);</span>
-<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          42 :   file = m_settings.passStore + file + &quot;.gpg&quot;;</span></span>
+<span id="L133"><span class="lineNum">     133</span> <span class="tlaGNC">          43 :   file = m_settings.passStore + file + &quot;.gpg&quot;;</span></span>
 <span id="L134"><span class="lineNum">     134</span>              :   QStringList args = {&quot;-d&quot;,      &quot;--quiet&quot;,    &quot;--yes&quot;, &quot;--no-encrypt-to&quot;,</span>
-<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         294 :                       &quot;--batch&quot;, &quot;--use-agent&quot;};</span></span>
-<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">         126 :   args &lt;&lt; maxOutputArgs() &lt;&lt; QStringLiteral(&quot;--&quot;) &lt;&lt; pgpg(file);</span></span>
-<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          84 :   executeGpg(PASS_SHOW, args);</span></span>
-<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          42 : }</span></span>
+<span id="L135"><span class="lineNum">     135</span> <span class="tlaGNC">         301 :                       &quot;--batch&quot;, &quot;--use-agent&quot;};</span></span>
+<span id="L136"><span class="lineNum">     136</span> <span class="tlaGNC">         129 :   args &lt;&lt; maxOutputArgs() &lt;&lt; QStringLiteral(&quot;--&quot;) &lt;&lt; pgpg(file);</span></span>
+<span id="L137"><span class="lineNum">     137</span> <span class="tlaGNC">          86 :   executeGpg(PASS_SHOW, args);</span></span>
+<span id="L138"><span class="lineNum">     138</span> <span class="tlaGNC">          43 : }</span></span>
 <span id="L139"><span class="lineNum">     139</span>              : </span>
 <span id="L140"><span class="lineNum">     140</span>              : namespace {</span>
 <span id="L141"><span class="lineNum">     141</span>              : </span>
@@ -1514,11 +1514,11 @@
 <span id="L1452"><span class="lineNum">    1452</span>              :   }</span>
 <span id="L1453"><span class="lineNum">    1453</span> <span class="tlaGNC">           8 : }</span></span>
 <span id="L1454"><span class="lineNum">    1454</span>              : </span>
-<span id="L1455"><span class="lineNum">    1455</span> <span class="tlaGNC">         100 : void ImitatePass::executeGpg(PROCESS id, const QStringList &amp;args, QString input,</span></span>
+<span id="L1455"><span class="lineNum">    1455</span> <span class="tlaGNC">         101 : void ImitatePass::executeGpg(PROCESS id, const QStringList &amp;args, QString input,</span></span>
 <span id="L1456"><span class="lineNum">    1456</span>              :                              bool readStdout, bool readStderr) {</span>
-<span id="L1457"><span class="lineNum">    1457</span> <span class="tlaGNC">         100 :   executeWrapper(id, m_settings.gpgExecutable, args, std::move(input),</span></span>
+<span id="L1457"><span class="lineNum">    1457</span> <span class="tlaGNC">         101 :   executeWrapper(id, m_settings.gpgExecutable, args, std::move(input),</span></span>
 <span id="L1458"><span class="lineNum">    1458</span>              :                  readStdout, readStderr);</span>
-<span id="L1459"><span class="lineNum">    1459</span> <span class="tlaGNC">         100 : }</span></span>
+<span id="L1459"><span class="lineNum">    1459</span> <span class="tlaGNC">         101 : }</span></span>
 <span id="L1460"><span class="lineNum">    1460</span>              : </span>
 <span id="L1461"><span class="lineNum">    1461</span>              : // useGit can be on with no gitExecutable (fresh setup, git removed later);</span>
 <span id="L1462"><span class="lineNum">    1462</span>              : // handing that to the Executor used to wedge the queue (#1682).</span>
@@ -1546,11 +1546,11 @@
 <span id="L1484"><span class="lineNum">    1484</span>              : </span>
 <span id="L1485"><span class="lineNum">    1485</span>              : // Only PASS_* processes reach Pass::finished, so to the interface this looks</span>
 <span id="L1486"><span class="lineNum">    1486</span>              : // the same as RealPass.</span>
-<span id="L1487"><span class="lineNum">    1487</span> <span class="tlaGNC">         127 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
+<span id="L1487"><span class="lineNum">    1487</span> <span class="tlaGNC">         129 : void ImitatePass::finished(int id, int exitCode, const QString &amp;out,</span></span>
 <span id="L1488"><span class="lineNum">    1488</span>              :                            const QString &amp;err) {</span>
-<span id="L1489"><span class="lineNum">    1489</span> <span class="tlaGNC">         127 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
+<span id="L1489"><span class="lineNum">    1489</span> <span class="tlaGNC">         129 :   qCDebug(lcQtPass) &lt;&lt; &quot;Imitate Pass&quot;;</span></span>
 <span id="L1490"><span class="lineNum">    1490</span>              :   QString error = err;</span>
-<span id="L1491"><span class="lineNum">    1491</span> <span class="tlaGNC">         127 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
+<span id="L1491"><span class="lineNum">    1491</span> <span class="tlaGNC">         129 :   if (id == PASS_INSERT &amp;&amp; !m_pendingInserts.isEmpty()) {</span></span>
 <span id="L1492"><span class="lineNum">    1492</span>              :     // Insert()'s gpg step: place the ciphertext before the queued git steps</span>
 <span id="L1493"><span class="lineNum">    1493</span>              :     // run (the executor starts the next item only after this returns). On</span>
 <span id="L1494"><span class="lineNum">    1494</span>              :     // failure it fails like a gpg error: git steps cancelled below.</span>
@@ -1564,11 +1564,11 @@
 <span id="L1502"><span class="lineNum">    1502</span>              :       }</span>
 <span id="L1503"><span class="lineNum">    1503</span>              :     }</span>
 <span id="L1504"><span class="lineNum">    1504</span> <span class="tlaGNC">          58 :   }</span></span>
-<span id="L1505"><span class="lineNum">    1505</span> <span class="tlaGNC">         127 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
-<span id="L1506"><span class="lineNum">    1506</span> <span class="tlaGNC">         127 :   m_transactionOutput.append(out);</span></span>
+<span id="L1505"><span class="lineNum">    1505</span> <span class="tlaGNC">         129 :   PROCESS pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
+<span id="L1506"><span class="lineNum">    1506</span> <span class="tlaGNC">         129 :   m_transactionOutput.append(out);</span></span>
 <span id="L1507"><span class="lineNum">    1507</span>              : </span>
-<span id="L1508"><span class="lineNum">    1508</span> <span class="tlaGNC">         127 :   if (exitCode == 0) {</span></span>
-<span id="L1509"><span class="lineNum">    1509</span> <span class="tlaGNC">         108 :     if (pid == INVALID) {</span></span>
+<span id="L1508"><span class="lineNum">    1508</span> <span class="tlaGNC">         129 :   if (exitCode == 0) {</span></span>
+<span id="L1509"><span class="lineNum">    1509</span> <span class="tlaGNC">         110 :     if (pid == INVALID) {</span></span>
 <span id="L1510"><span class="lineNum">    1510</span>              :       return;</span>
 <span id="L1511"><span class="lineNum">    1511</span>              :     }</span>
 <span id="L1512"><span class="lineNum">    1512</span>              :   } else {</span>
@@ -1582,8 +1582,8 @@
 <span id="L1520"><span class="lineNum">    1520</span> <span class="tlaGNC tlaBgGNC">           3 :       pid = m_transaction.transactionIsOver(static_cast&lt;PROCESS&gt;(id));</span></span>
 <span id="L1521"><span class="lineNum">    1521</span>              :     }</span>
 <span id="L1522"><span class="lineNum">    1522</span>              :   }</span>
-<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">         117 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
-<span id="L1524"><span class="lineNum">    1524</span> <span class="tlaGNC">         117 :   m_transactionOutput.clear();</span></span>
+<span id="L1523"><span class="lineNum">    1523</span> <span class="tlaGNC">         119 :   Pass::finished(pid, exitCode, m_transactionOutput, error);</span></span>
+<span id="L1524"><span class="lineNum">    1524</span> <span class="tlaGNC">         119 :   m_transactionOutput.clear();</span></span>
 <span id="L1525"><span class="lineNum">    1525</span>              : }</span>
 <span id="L1526"><span class="lineNum">    1526</span>              : </span>
 <span id="L1527"><span class="lineNum">    1527</span> <span class="tlaGNC">         102 : auto ImitatePass::placeEncryptedFile(const QString &amp;output, const QString &amp;file,</span></span>
@@ -1598,9 +1598,9 @@
 <span id="L1536"><span class="lineNum">    1536</span> <span class="tlaGNC">         100 :   return Util::copyFileReplacing(output, file, overwrite, error);</span></span>
 <span id="L1537"><span class="lineNum">    1537</span>              : }</span>
 <span id="L1538"><span class="lineNum">    1538</span>              : </span>
-<span id="L1539"><span class="lineNum">    1539</span> <span class="tlaGNC">         132 : void ImitatePass::beforeExecute(PROCESS id) {</span></span>
-<span id="L1540"><span class="lineNum">    1540</span> <span class="tlaGNC">         132 :   m_transaction.transactionAdd(id);</span></span>
-<span id="L1541"><span class="lineNum">    1541</span> <span class="tlaGNC">         132 : }</span></span>
+<span id="L1539"><span class="lineNum">    1539</span> <span class="tlaGNC">         133 : void ImitatePass::beforeExecute(PROCESS id) {</span></span>
+<span id="L1540"><span class="lineNum">    1540</span> <span class="tlaGNC">         133 :   m_transaction.transactionAdd(id);</span></span>
+<span id="L1541"><span class="lineNum">    1541</span> <span class="tlaGNC">         133 : }</span></span>
 <span id="L1542"><span class="lineNum">    1542</span>              : </span>
 <span id="L1543"><span class="lineNum">    1543</span>              : // PCRE, as for RealPass (see Pass::Grep). Runs on a NativeGrep thread; the</span>
 <span id="L1544"><span class="lineNum">    1544</span>              : // result arrives on this thread as finishedGrep.</span>

@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-02 18:47:09</td>
+            <td class="headerValue">2026-11-03 15:04:39</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -82,16 +82,16 @@
 <span id="L20"><span class="lineNum">      20</span>              : /// stays. The new store's .gpg-id is signed, and a signed commit made, with</span>
 <span id="L21"><span class="lineNum">      21</span>              : /// the keyring QtPass uses everywhere else, where the signing key may be</span>
 <span id="L22"><span class="lineNum">      22</span>              : /// the only place it is.</span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC tlaBgGNC">         228 : auto withGpgHome(QProcessEnvironment env, const AppSettings &amp;s)</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC tlaBgGNC">         236 : auto withGpgHome(QProcessEnvironment env, const AppSettings &amp;s)</span></span>
 <span id="L24"><span class="lineNum">      24</span>              :     -&gt; QProcessEnvironment {</span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         228 :   if (!s.gpgHome.isEmpty()) {</span></span>
-<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">           7 :     QDir home(s.gpgHome);</span></span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           7 :     home.makeAbsolute();</span></span>
-<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">           7 :     if (home.exists()) {</span></span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           8 :       env.insert(QStringLiteral(&quot;GNUPGHOME&quot;), home.path());</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">         236 :   if (!s.gpgHome.isEmpty()) {</span></span>
+<span id="L26"><span class="lineNum">      26</span> <span class="tlaGNC">          11 :     QDir home(s.gpgHome);</span></span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">          11 :     home.makeAbsolute();</span></span>
+<span id="L28"><span class="lineNum">      28</span> <span class="tlaGNC">          11 :     if (home.exists()) {</span></span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">          16 :       env.insert(QStringLiteral(&quot;GNUPGHOME&quot;), home.path());</span></span>
 <span id="L30"><span class="lineNum">      30</span>              :     }</span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           7 :   }</span></span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         228 :   return env;</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">          11 :   }</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">         236 :   return env;</span></span>
 <span id="L33"><span class="lineNum">      33</span>              : }</span>
 <span id="L34"><span class="lineNum">      34</span>              : </span>
 <span id="L35"><span class="lineNum">      35</span>              : /// As Pass::updateEnv() sets it for the active store: git in @p dir does not</span>
@@ -131,8 +131,8 @@
 <span id="L69"><span class="lineNum">      69</span>              : }</span>
 <span id="L70"><span class="lineNum">      70</span>              : } // namespace</span>
 <span id="L71"><span class="lineNum">      71</span>              : </span>
-<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">         193 : auto ProfileInit::gpgEnvironment(const AppSettings &amp;s) -&gt; QProcessEnvironment {</span></span>
-<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">         193 :   return withGpgHome(QProcessEnvironment::systemEnvironment(), s);</span></span>
+<span id="L72"><span class="lineNum">      72</span> <span class="tlaGNC">         201 : auto ProfileInit::gpgEnvironment(const AppSettings &amp;s) -&gt; QProcessEnvironment {</span></span>
+<span id="L73"><span class="lineNum">      73</span> <span class="tlaGNC">         201 :   return withGpgHome(QProcessEnvironment::systemEnvironment(), s);</span></span>
 <span id="L74"><span class="lineNum">      74</span>              : }</span>
 <span id="L75"><span class="lineNum">      75</span>              : </span>
 <span id="L76"><span class="lineNum">      76</span> <span class="tlaGNC">          11 : auto ProfileInit::needsInit(const QString &amp;path) -&gt; bool {</span></span>
