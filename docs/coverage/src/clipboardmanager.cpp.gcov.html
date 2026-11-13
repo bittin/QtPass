@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-03 15:04:39</td>
+            <td class="headerValue">2026-11-13 05:37:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -69,32 +69,32 @@
 <span id="L7"><span class="lineNum">       7</span>              : #include &lt;QClipboard&gt;</span>
 <span id="L8"><span class="lineNum">       8</span>              : #include &lt;utility&gt;</span>
 <span id="L9"><span class="lineNum">       9</span>              : </span>
-<span id="L10"><span class="lineNum">      10</span> <span class="tlaGNC tlaBgGNC">         152 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
-<span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC">         152 :   setAutoclearTimer();</span></span>
-<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">         152 :   m_clearTimer.setSingleShot(true);</span></span>
-<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">         152 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
-<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">         152 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
-<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">         152 :           &amp;ClipboardManager::clear);</span></span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         152 : }</span></span>
+<span id="L10"><span class="lineNum">      10</span> <span class="tlaGNC tlaBgGNC">         153 : ClipboardManager::ClipboardManager(QObject *parent) : QObject(parent) {</span></span>
+<span id="L11"><span class="lineNum">      11</span> <span class="tlaGNC">         153 :   setAutoclearTimer();</span></span>
+<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">         153 :   m_clearTimer.setSingleShot(true);</span></span>
+<span id="L13"><span class="lineNum">      13</span> <span class="tlaGNC">         153 :   connect(&amp;m_clearTimer, &amp;QTimer::timeout, this, &amp;ClipboardManager::clear);</span></span>
+<span id="L14"><span class="lineNum">      14</span> <span class="tlaGNC">         153 :   connect(QApplication::instance(), &amp;QApplication::aboutToQuit, this,</span></span>
+<span id="L15"><span class="lineNum">      15</span> <span class="tlaGNC">         153 :           &amp;ClipboardManager::clear);</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">         153 : }</span></span>
 <span id="L17"><span class="lineNum">      17</span>              : </span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         156 : void ClipboardManager::setAutoclearTimer() {</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         312 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         312 :                            QtPassSettings::getAutoclearSeconds());</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         156 : }</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">         157 : void ClipboardManager::setAutoclearTimer() {</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">         314 :   m_clearTimer.setInterval(MS_PER_SECOND *</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">         314 :                            QtPassSettings::getAutoclearSeconds());</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">         157 : }</span></span>
 <span id="L22"><span class="lineNum">      22</span>              : </span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          15 : void ClipboardManager::copyIfAlways(const QString &amp;text,</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">          17 : void ClipboardManager::copyIfAlways(const QString &amp;text,</span></span>
 <span id="L24"><span class="lineNum">      24</span>              :                                     const QString &amp;p_output) {</span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">          15 :   const AppSettings s = QtPassSettings::load();</span></span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">          17 :   const AppSettings s = QtPassSettings::load();</span></span>
 <span id="L26"><span class="lineNum">      26</span>              :   // Only &quot;always copy&quot; mode actually places text on the clipboard here; in</span>
 <span id="L27"><span class="lineNum">      27</span>              :   // on-demand mode the copy happens later from the field's copy button.</span>
 <span id="L28"><span class="lineNum">      28</span>              :   // Crucially, do not touch m_clippedText otherwise — it tracks what is</span>
 <span id="L29"><span class="lineNum">      29</span>              :   // currently on the clipboard so the autoclear timer knows what to clear.</span>
 <span id="L30"><span class="lineNum">      30</span>              :   // Overwriting it when merely showing another entry left a previously copied</span>
 <span id="L31"><span class="lineNum">      31</span>              :   // password on the clipboard past its autoclear window (#1607).</span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          15 :   if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS &amp;&amp; !p_output.isEmpty()) {</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">          17 :   if (s.clipBoardType == Enums::CLIPBOARD_ALWAYS &amp;&amp; !p_output.isEmpty()) {</span></span>
 <span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           1 :     copyText(text);</span></span>
 <span id="L34"><span class="lineNum">      34</span>              :   }</span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          15 : }</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">          17 : }</span></span>
 <span id="L36"><span class="lineNum">      36</span>              : </span>
 <span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">          30 : void ClipboardManager::copyText(const QString &amp;text) {</span></span>
 <span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">          30 :   const AppSettings s = QtPassSettings::load();</span></span>

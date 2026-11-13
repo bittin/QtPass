@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-03 15:04:39</td>
+            <td class="headerValue">2026-11-13 05:37:44</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -174,9 +174,9 @@
 <span id="L112"><span class="lineNum">     112</span>              :  * @param encodedData Padded base32 text whose length is a multiple of 8.</span>
 <span id="L113"><span class="lineNum">     113</span>              :  * @return Decoded bytes, or an empty QByteArray on any error.</span>
 <span id="L114"><span class="lineNum">     114</span>              :  */</span>
-<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">         258 : auto Base32::decode(const QByteArray &amp;encodedData) -&gt; QByteArray {</span></span>
+<span id="L115"><span class="lineNum">     115</span> <span class="tlaGNC">         259 : auto Base32::decode(const QByteArray &amp;encodedData) -&gt; QByteArray {</span></span>
 <span id="L116"><span class="lineNum">     116</span>              :   // Strict: a well-formed base32 string is always padded to a multiple of 8.</span>
-<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         258 :   if (encodedData.isEmpty() || encodedData.size() % 8 != 0) {</span></span>
+<span id="L117"><span class="lineNum">     117</span> <span class="tlaGNC">         259 :   if (encodedData.isEmpty() || encodedData.size() % 8 != 0) {</span></span>
 <span id="L118"><span class="lineNum">     118</span>              :     return {};</span>
 <span id="L119"><span class="lineNum">     119</span>              :   }</span>
 <span id="L120"><span class="lineNum">     120</span> <span class="tlaGNC">         204 :   const int nPads = countPadding(encodedData);</span></span>
@@ -331,14 +331,14 @@
 <span id="L269"><span class="lineNum">     269</span>              :  * @param encodedData Unpadded or partially padded base32 text.</span>
 <span id="L270"><span class="lineNum">     270</span>              :  * @return Padded text, unchanged for impossible length remainders.</span>
 <span id="L271"><span class="lineNum">     271</span>              :  */</span>
-<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         223 : auto Base32::addPadding(const QByteArray &amp;encodedData) -&gt; QByteArray {</span></span>
-<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         223 :   if (encodedData.isEmpty() || encodedData.size() % 8 == 0) {</span></span>
+<span id="L272"><span class="lineNum">     272</span> <span class="tlaGNC">         224 : auto Base32::addPadding(const QByteArray &amp;encodedData) -&gt; QByteArray {</span></span>
+<span id="L273"><span class="lineNum">     273</span> <span class="tlaGNC">         224 :   if (encodedData.isEmpty() || encodedData.size() % 8 == 0) {</span></span>
 <span id="L274"><span class="lineNum">     274</span>              :     return encodedData;</span>
 <span id="L275"><span class="lineNum">     275</span>              :   }</span>
 <span id="L276"><span class="lineNum">     276</span>              : </span>
-<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          94 :   const int rBytes = static_cast&lt;int&gt;(encodedData.size() % 8);</span></span>
+<span id="L277"><span class="lineNum">     277</span> <span class="tlaGNC">          95 :   const int rBytes = static_cast&lt;int&gt;(encodedData.size() % 8);</span></span>
 <span id="L278"><span class="lineNum">     278</span>              :   // rBytes must be a member of {2, 4, 5, 7}.</span>
-<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          94 :   if (1 == rBytes || 3 == rBytes || 6 == rBytes) {</span></span>
+<span id="L279"><span class="lineNum">     279</span> <span class="tlaGNC">          95 :   if (1 == rBytes || 3 == rBytes || 6 == rBytes) {</span></span>
 <span id="L280"><span class="lineNum">     280</span>              :     return encodedData;</span>
 <span id="L281"><span class="lineNum">     281</span>              :   }</span>
 <span id="L282"><span class="lineNum">     282</span>              : </span>
@@ -371,17 +371,17 @@
 <span id="L309"><span class="lineNum">     309</span>              :  * @param encodedData Raw user input.</span>
 <span id="L310"><span class="lineNum">     310</span>              :  * @return Sanitized, padded base32 text.</span>
 <span id="L311"><span class="lineNum">     311</span>              :  */</span>
-<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         223 : auto Base32::sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray {</span></span>
-<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">         223 :   if (encodedData.isEmpty()) {</span></span>
+<span id="L312"><span class="lineNum">     312</span> <span class="tlaGNC">         224 : auto Base32::sanitizeInput(const QByteArray &amp;encodedData) -&gt; QByteArray {</span></span>
+<span id="L313"><span class="lineNum">     313</span> <span class="tlaGNC">         224 :   if (encodedData.isEmpty()) {</span></span>
 <span id="L314"><span class="lineNum">     314</span>              :     return encodedData;</span>
 <span id="L315"><span class="lineNum">     315</span>              :   }</span>
 <span id="L316"><span class="lineNum">     316</span>              : </span>
-<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">         209 :   QByteArray newEncodedData(encodedData.size(), Qt::Uninitialized);</span></span>
+<span id="L317"><span class="lineNum">     317</span> <span class="tlaGNC">         210 :   QByteArray newEncodedData(encodedData.size(), Qt::Uninitialized);</span></span>
 <span id="L318"><span class="lineNum">     318</span>              :   // Raw pointer: see the note in decode().</span>
 <span id="L319"><span class="lineNum">     319</span>              :   char *out = newEncodedData.data();</span>
 <span id="L320"><span class="lineNum">     320</span>              :   qsizetype i = 0;</span>
-<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">       14455 :   for (auto ch : encodedData) {</span></span>
-<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">       14246 :     switch (ch) {</span></span>
+<span id="L321"><span class="lineNum">     321</span> <span class="tlaGNC">       14467 :   for (auto ch : encodedData) {</span></span>
+<span id="L322"><span class="lineNum">     322</span> <span class="tlaGNC">       14257 :     switch (ch) {</span></span>
 <span id="L323"><span class="lineNum">     323</span> <span class="tlaGNC">           1 :     case '0':</span></span>
 <span id="L324"><span class="lineNum">     324</span> <span class="tlaGNC">           1 :       out[i++] = 'O';</span></span>
 <span id="L325"><span class="lineNum">     325</span> <span class="tlaGNC">           1 :       break;</span></span>
@@ -391,16 +391,16 @@
 <span id="L329"><span class="lineNum">     329</span> <span class="tlaGNC">          13 :     case '8':</span></span>
 <span id="L330"><span class="lineNum">     330</span> <span class="tlaGNC">          13 :       out[i++] = 'B';</span></span>
 <span id="L331"><span class="lineNum">     331</span> <span class="tlaGNC">          13 :       break;</span></span>
-<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">       14221 :     default:</span></span>
-<span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">       14221 :       if (('A' &lt;= ch &amp;&amp; ch &lt;= 'Z') || ('a' &lt;= ch &amp;&amp; ch &lt;= 'z') ||</span></span>
-<span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">         496 :           ('2' &lt;= ch &amp;&amp; ch &lt;= '7')) {</span></span>
-<span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">       14135 :         out[i++] = ch;</span></span>
+<span id="L332"><span class="lineNum">     332</span> <span class="tlaGNC">       14232 :     default:</span></span>
+<span id="L333"><span class="lineNum">     333</span> <span class="tlaGNC">       14232 :       if (('A' &lt;= ch &amp;&amp; ch &lt;= 'Z') || ('a' &lt;= ch &amp;&amp; ch &lt;= 'z') ||</span></span>
+<span id="L334"><span class="lineNum">     334</span> <span class="tlaGNC">         500 :           ('2' &lt;= ch &amp;&amp; ch &lt;= '7')) {</span></span>
+<span id="L335"><span class="lineNum">     335</span> <span class="tlaGNC">       14144 :         out[i++] = ch;</span></span>
 <span id="L336"><span class="lineNum">     336</span>              :       }</span>
 <span id="L337"><span class="lineNum">     337</span>              :     }</span>
 <span id="L338"><span class="lineNum">     338</span>              :   }</span>
-<span id="L339"><span class="lineNum">     339</span> <span class="tlaGNC">         209 :   newEncodedData.resize(i);</span></span>
+<span id="L339"><span class="lineNum">     339</span> <span class="tlaGNC">         210 :   newEncodedData.resize(i);</span></span>
 <span id="L340"><span class="lineNum">     340</span>              : </span>
-<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">         209 :   return addPadding(newEncodedData);</span></span>
+<span id="L341"><span class="lineNum">     341</span> <span class="tlaGNC">         210 :   return addPadding(newEncodedData);</span></span>
 <span id="L342"><span class="lineNum">     342</span>              : }</span>
         </pre>
               </td>
