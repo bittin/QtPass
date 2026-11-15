@@ -1,17 +1,28 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-
+<!doctype html>
+<!-- SPDX-FileCopyrightText: 2026 Anne Jan Brouwer -->
+<!-- SPDX-License-Identifier: GPL-3.0-or-later -->
 <html lang="en">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>LCOV - .lcov.total - src/qtpasslogging.cpp</title>
-  <link rel="stylesheet" type="text/css" href="../gcov.css">
-</head>
-
-<body>
-
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LCOV - QtPass - src/qtpasslogging.cpp</title>
+    <meta
+      name="description"
+      content="Which lines and functions of the QtPass source code its tests run, file by file."
+    />
+    <link rel="stylesheet" href="../gcov.css" />
+    <link rel="icon" type="image/svg+xml" href="../../qtpass-icon.svg" />
+  </head>
+  <body>
+    <header class="site">
+      <a href="../../index.html">
+        <img src="../../qtpass-icon.svg" alt="" width="36" height="36" />
+        <span class="name">QtPass</span>
+        <span class="section">Developer documentation</span>
+      </a>
+    </header>
           <table width="100%" border=0 cellspacing=0 cellpadding=0>
-            <tr><td class="title">LCOV - code coverage report</td></tr>
+            <tr><td class="title">QtPass test coverage</td></tr>
             <tr><td class="ruler"><img src="../glass.png" width=3 height=3 alt=""></td></tr>
 
             <tr>
@@ -19,7 +30,7 @@
                 <table cellpadding=1 border=0 width="100%">
           <tr>
             <td width="10%" class="headerItem">Current view:</td>
-            <td width="10%" class="headerValue"><a href="../index.html">top level</a> - <a href="index.html">src</a> - qtpasslogging.cpp<span style="font-size: 80%;"> (source / <a href="qtpasslogging.cpp.func-c.html">functions</a>)</span></td>
+            <td width="10%" class="headerValue"><a href="../index.html" title="Click to go to top-level">top level</a> - src/qtpasslogging.cpp<span style="font-size: 80%;"> (source / <a href="qtpasslogging.cpp.func-c.html" title="Click to go to function table">functions</a>)</span></td>
             <td width="5%"></td>
             <td width="5%"></td>
             <td width="5%" class="headerCovTableHead">Coverage</td>
@@ -28,7 +39,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test:</td>
-            <td class="headerValue">.lcov.total</td>
+            <td class="headerValue">QtPass</td>
             <td></td>
             <td class="headerItem">Lines:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -37,7 +48,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2026-11-13 05:37:44</td>
+            <td class="headerValue">2026-11-15 20:43:53</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
@@ -62,11 +73,16 @@
 <pre class="source">
 <span id="L1"><span class="lineNum">       1</span>              : // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span>
 <span id="L2"><span class="lineNum">       2</span>              : // SPDX-License-Identifier: GPL-3.0-or-later</span>
-<span id="L3"><span class="lineNum">       3</span>              : #include &quot;qtpasslogging.h&quot;</span>
-<span id="L4"><span class="lineNum">       4</span>              : </span>
-<span id="L5"><span class="lineNum">       5</span>              : // Info and above are on; debug stays quiet until QT_LOGGING_RULES asks for</span>
-<span id="L6"><span class="lineNum">       6</span>              : // it, so a release build can produce a trace without recompiling.</span>
-<span id="L7"><span class="lineNum">       7</span> <span class="tlaGNC tlaBgGNC">        1222 : Q_LOGGING_CATEGORY(lcQtPass, &quot;qtpass&quot;, QtInfoMsg)</span></span>
+<span id="L3"><span class="lineNum">       3</span>              : /**</span>
+<span id="L4"><span class="lineNum">       4</span>              :  * @file</span>
+<span id="L5"><span class="lineNum">       5</span>              :  * @brief Defines the `lcQtPass` logging category with info as its default</span>
+<span id="L6"><span class="lineNum">       6</span>              :  *        level, so a release build can be traced without recompiling.</span>
+<span id="L7"><span class="lineNum">       7</span>              :  */</span>
+<span id="L8"><span class="lineNum">       8</span>              : #include &quot;qtpasslogging.h&quot;</span>
+<span id="L9"><span class="lineNum">       9</span>              : </span>
+<span id="L10"><span class="lineNum">      10</span>              : // Info and above are on; debug stays quiet until QT_LOGGING_RULES asks for</span>
+<span id="L11"><span class="lineNum">      11</span>              : // it, so a release build can produce a trace without recompiling.</span>
+<span id="L12"><span class="lineNum">      12</span> <span class="tlaGNC">        1479 : Q_LOGGING_CATEGORY(lcQtPass, &quot;qtpass&quot;, QtInfoMsg)</span></span>
         </pre>
               </td>
             </tr>

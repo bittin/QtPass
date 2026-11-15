@@ -1,4 +1,5 @@
 <map id="PlainMessageBox::warning" name="PlainMessageBox::warning">
-<area shape="rect" id="Node000001" title="Show a warning in plain text." alt="" coords="5,29,203,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="71,31,65,21,68,11,82,5,104,3,131,6,142,15,139,19,129,11,104,8,83,10,72,15,70,20,76,28"/>
+<area shape="rect" id="Node000001" title="Show a warning in plain text." alt="" coords="5,5,202,33"/>
+<area shape="rect" id="Node000002" href="$namespace_plain_message_box.html#a36ac74290030890f3f598053cc220071" title="Show a modal message box with plain text and wait for it." alt="" coords="250,5,428,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,17,236,19,231,19,202,22"/>
 </map>

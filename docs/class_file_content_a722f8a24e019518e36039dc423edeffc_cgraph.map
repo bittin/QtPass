@@ -1,0 +1,7 @@
+<map id="FileContent::isOtpLine" name="FileContent::isOtpLine">
+<area shape="rect" id="Node000001" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="5,32,170,60"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b" title="Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco..." alt="" coords="227,5,416,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,34,214,31,208,32,170,39"/>
+<area shape="rect" id="Node000003" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="218,57,425,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,52,205,58,200,58,170,57"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="FileContent::isOtpPasswordLine" name="FileContent::isOtpPasswordLine">
+<area shape="rect" id="Node000001" title="Whether an entry&#39;s first line holds a TOTP shared secret rather than a password." alt="" coords="1601,83,1827,111"/>
+<area shape="rect" id="Node000002" href="$class_password_display_panel.html#a46f59667a2e7a14abfadd8372ce88a4f" title="Render the password and template fields of a decrypted entry." alt="" coords="1378,5,1544,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1643,78,1544,53,1545,48,1649,79"/>
+<area shape="rect" id="Node000008" href="$class_file_content.html#ae2d4131533e5e1eee2a5af47fdb653d4" title="Like getPassword but empty when the password line holds a TOTP shared secret (isOtpPasswordLine())." alt="" coords="1368,75,1553,119"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1583,97,1554,100,1554,94,1588,97"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#a7d0d5451438004ab31c4d9d48a869378" title="Copy the first line of a decrypted entry (Ctrl+C). Ignores decrypts of anything but the entry copyPas..." alt="" coords="1102,135,1310,179"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="1643,115,1554,134,1427,148,1310,156,1310,151,1427,143,1553,129,1638,115"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ad8dfb7651169c5fe73440315926d6abc" title="Render a decrypted entry: fields into the display panel, the rest into the text browser,..." alt="" coords="1092,83,1320,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1365,54,1260,85,1259,80,1360,55"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a53a99014ce1d19698aadd735b6af0284" title="Connect the signals of one backend that the window answers itself: errors, critical messages,..." alt="" coords="804,114,1044,142"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1079,111,1044,117,1044,112,1074,111"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#aaeb359b178b860a18c188edaf996ed4c" title=" " alt="" coords="531,114,756,142"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="786,128,757,130,757,125,791,128"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="Construct the main window." alt="" coords="287,114,483,142"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="513,128,484,130,483,125,518,128"/>
+<area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="428,98,414,95,385,92,358,94,343,99,339,105,346,114,341,112,334,105,339,95,357,89,385,87,415,90,433,99"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a856c67c50c07ca0b0f4c81b818a0f742" title="Build and show the tree&#39;s context menu for the item under the cursor: folder actions (open,..." alt="" coords="5,114,239,142"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="269,137,239,139,239,134,274,136"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="254,116,289,119,284,119,254,121"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="1350,97,1320,100,1320,94,1355,97"/>
+<area shape="poly" id="edge12_Node000009_Node000004" title=" " alt="" coords="1084,145,1044,143,1044,137,1089,145"/>
+</map>

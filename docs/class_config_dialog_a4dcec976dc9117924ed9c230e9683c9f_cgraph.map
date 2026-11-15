@@ -1,4 +1,6 @@
 <map id="ConfigDialog::useGit" name="ConfigDialog::useGit">
-<area shape="rect" id="Node000001" title="Enable or disable git integration." alt="" coords="5,29,160,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="57,31,52,21,54,11,65,5,83,3,104,6,113,15,109,19,101,11,83,8,67,10,59,15,57,20,62,28"/>
+<area shape="rect" id="Node000001" title="Enable or disable git integration." alt="" coords="5,29,160,57"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="44,29,38,20,43,11,58,5,83,3,109,5,125,14,119,14,107,10,82,8,59,10,46,15,43,20,49,29"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a96ca92ab55a5269a7d8615a137a877ac" title="Enable the Git&#45;dependent boxes (add .gpg&#45;id, auto pull/push, and in native mode the parent&#45;repository..." alt="" coords="208,21,406,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,41,195,43,189,43,160,46"/>
 </map>

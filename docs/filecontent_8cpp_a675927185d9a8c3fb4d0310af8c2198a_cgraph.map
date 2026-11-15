@@ -1,0 +1,10 @@
+<map id="isLineHidden" name="isLineHidden">
+<area shape="rect" id="Node000001" title="Whether a body line must stay out of the parsed display because it carries a TOTP shared secret (File..." alt="" coords="5,32,111,60"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="26,32,21,23,25,14,38,7,58,5,80,8,93,16,88,17,78,13,58,11,39,13,29,17,26,23,31,31"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#a722f8a24e019518e36039dc423edeffc" title="Whether line carries a TOTP shared secret: a bare otpauth:// line, an OTP:/TOTP: field,..." alt="" coords="159,32,323,60"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="111,43,146,45,141,46,111,48"/>
+<area shape="rect" id="Node000003" href="$class_file_content.html#ae7b71f0b3d4b07a54068afe8699abb9b" title="Whether text holds an otpauth URI anywhere: after a list dash, in quotes, behind other text or a seco..." alt="" coords="380,5,569,33"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="323,34,367,31,362,32,323,39"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#a5f014b99069094d17a41fce67a3a9b8f" title="Whether a field name designates the one&#45;time password field." alt="" coords="371,57,578,85"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="323,52,358,58,353,58,323,57"/>
+</map>
