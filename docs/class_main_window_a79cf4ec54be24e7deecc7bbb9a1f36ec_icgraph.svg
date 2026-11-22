@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
-<svg id="graph" class="graph" data-view-width="1080" data-view-height="66" data-section-id="dynsection-167">
+<svg id="graph" class="graph" data-view-width="1080" data-view-height="66" data-section-id="dynsection-170">
 <g id="viewport">
 <title>MainWindow::updateProcessOutputVisibility</title>
 <!-- Node1 -->
@@ -99,7 +99,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" target="_top" xlink:title="Toolbar &quot;Config&quot;: config(), ignoring its result.">
+<g id="a_Node000005"><a xlink:href="class_main_window.html#a1a9f8db082fd90bdd667e5b7ebca8f44" target="_top" xlink:title="Toolbar &quot;Config&quot;: config(), ignoring its result; refused while a backend still runs or waits,...">
 <polygon fill="white" stroke="#666666" points="730.75,-20.75 603.75,-20.75 603.75,0 730.75,0 730.75,-20.75"/>
 <text xml:space="preserve" text-anchor="middle" x="667.25" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::onConfig</text>
 </a>

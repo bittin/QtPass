@@ -198,6 +198,7 @@ var group__ui =
       [ "applySearchText", "class_main_window.html#a2a80222ef73eb5c6d9350db559787488", null ],
       [ "applyTextBrowserSettings", "class_main_window.html#ac5705aca84795de049d9a0f0a0d5e3fb", null ],
       [ "applyWindowFlagsSettings", "class_main_window.html#a8c981247a44bc74f5152c312c15a8a79", null ],
+      [ "browserContextMenu", "class_main_window.html#aa24503cb5aa74e6f7153d6b9c941457d", null ],
       [ "cancelContentSearch", "class_main_window.html#acea360ee08a3087d30db0c94ae8306ad", null ],
       [ "cancelOtpRequest", "class_main_window.html#a083c74efb3eabf7f2ccd7fa691bf8841", null ],
       [ "changeEvent", "class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad", null ],
@@ -294,9 +295,11 @@ var group__ui =
       [ "m_freshStart", "class_main_window.html#a57db704bcff94381497191c3a0f52299", null ],
       [ "m_grep", "class_main_window.html#a00e108f09fd76b84ae1a11525168812e", null ],
       [ "m_initSucceeded", "class_main_window.html#accfd1464f92298d292b7420d9e8aad23", null ],
+      [ "m_inProgressUpdate", "class_main_window.html#ac51178ad833df0918d3666cfc05ff7af", null ],
       [ "m_otpRequestFile", "class_main_window.html#a968492980a2afd7e2ad940fd49ff2f83", null ],
       [ "m_pendingOpen", "class_main_window.html#a2d2dba0de7041c5de5f34b7e114b9ab9", null ],
       [ "m_processOutput", "class_main_window.html#a4ebc3150bc50eb101d504fbedff4c419", null ],
+      [ "m_progressToDelete", "class_main_window.html#aabb980ba180c68b1a3aba7e63708160b", null ],
       [ "m_qtPass", "class_main_window.html#ae772473e8fa0047f5db5bcb410dc88a1", null ],
       [ "m_reencryptProgress", "class_main_window.html#a42a13a21710984a7ba71158b5651c0ee", null ],
       [ "m_reencryptRunning", "class_main_window.html#afe4566e631ef61e85d4f22c675de3fe2", null ],
@@ -419,7 +422,7 @@ var group__ui =
       [ "textCopied", "class_password_display_panel.html#ab3183a3523179d61490f18e41fbda13a", null ],
       [ "m_container", "class_password_display_panel.html#a580a255eef7ca0b304bcd45cefb589da", null ],
       [ "m_grid", "class_password_display_panel.html#a50268730943ba64e36bc8e13d2fdd2d8", null ],
-      [ "m_markedSecrets", "class_password_display_panel.html#a3be383ffb43c6be89ce0d45f040cc27c", null ],
+      [ "m_markedSecrets", "class_password_display_panel.html#abfa6aa7c1cdc17bf57b1156baffb1cb1", null ],
       [ "m_widgetParent", "class_password_display_panel.html#a1e9ba0ef466c4207b26b898e1dc50a18", null ]
     ] ],
     [ "ProcessOutputPanel", "class_process_output_panel.html", [

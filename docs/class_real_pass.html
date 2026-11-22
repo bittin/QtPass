@@ -151,8 +151,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aacaf85a65fc1398c356dd44370e5e22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Git repository in password store.  <br /></td></tr>
 <tr class="memitem:ac3206e85bc586214e6cc75186cff65c3" id="r_ac3206e85bc586214e6cc75186cff65c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac3206e85bc586214e6cc75186cff65c3">GitPull</a> () override</td></tr>
 <tr class="memdesc:ac3206e85bc586214e6cc75186cff65c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull changes from remote.  <br /></td></tr>
-<tr class="memitem:a6a959408a305cc8dd7cc6c7bd9c17210" id="r_a6a959408a305cc8dd7cc6c7bd9c17210"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6a959408a305cc8dd7cc6c7bd9c17210">GitPull_b</a> () override</td></tr>
-<tr class="memdesc:a6a959408a305cc8dd7cc6c7bd9c17210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull with rebase.  <br /></td></tr>
+<tr class="memitem:ad218ae042cc6d3322ecf10b4b6c45e6d" id="r_ad218ae042cc6d3322ecf10b4b6c45e6d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad218ae042cc6d3322ecf10b4b6c45e6d">GitPull_b</a> (int timeoutMs) override</td></tr>
+<tr class="memdesc:ad218ae042cc6d3322ecf10b4b6c45e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run <span class="tt">pass git pull</span> and wait for it, at most <code class="param">timeoutMs</code>.  <br /></td></tr>
 <tr class="memitem:ae32fd82fe5e57b2c45df05bfe2991b5b" id="r_ae32fd82fe5e57b2c45df05bfe2991b5b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae32fd82fe5e57b2c45df05bfe2991b5b">GitPush</a> () override</td></tr>
 <tr class="memdesc:ae32fd82fe5e57b2c45df05bfe2991b5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push changes to remote.  <br /></td></tr>
 <tr class="memitem:a63da21db00da709ae5aa8f7a992e16e1" id="r_a63da21db00da709ae5aa8f7a992e16e1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a63da21db00da709ae5aa8f7a992e16e1">Show</a> (QString file) override</td></tr>
@@ -208,14 +208,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a57cc7915c4d3f4a795b0ec8ad4056482 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPG supports Ed25519 encryption.  <br /></td></tr>
 <tr class="memitem:a126c484e0780c5ac98a57007a4daa926 inherit pub_static_methods_class_pass" id="r_a126c484e0780c5ac98a57007a4daa926"><td class="memItemLeft">static QString&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a126c484e0780c5ac98a57007a4daa926">getDefaultKeyTemplate</a> (const QString &amp;gpgExecutable={})</td></tr>
 <tr class="memdesc:a126c484e0780c5ac98a57007a4daa926 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
+<tr class="memitem:ac4f20d4ca8f4069365ce1a74be811be2 inherit pub_static_methods_class_pass" id="r_ac4f20d4ca8f4069365ce1a74be811be2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ac4f20d4ca8f4069365ce1a74be811be2">pullTimedOut</a> (int timeoutMs) -&gt; QString</td></tr>
+<tr class="memdesc:ac4f20d4ca8f4069365ce1a74be811be2 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The status-bar text for a blocking pull stopped at its deadline.  <br /></td></tr>
 <tr class="memitem:a5a0b433814c3701da1bdb0b7bd87052a inherit pub_static_methods_class_pass" id="r_a5a0b433814c3701da1bdb0b7bd87052a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a5a0b433814c3701da1bdb0b7bd87052a">maxOutputArgs</a> () -&gt; QStringList</td></tr>
 <tr class="memdesc:a5a0b433814c3701da1bdb0b7bd87052a inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The gpg options that enforce kMaxPlaintextBytes.  <br /></td></tr>
 <tr class="memitem:a6a9aa8dc4ff288ce256351b671533a84 inherit pub_static_methods_class_pass" id="r_a6a9aa8dc4ff288ce256351b671533a84"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a6a9aa8dc4ff288ce256351b671533a84">resolveGpgconfCommand</a> (const QString &amp;gpgPath) -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td></tr>
 <tr class="memdesc:a6a9aa8dc4ff288ce256351b671533a84 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
 <tr class="memitem:a229cc680077f9ad2cfa0484a8aa20efe inherit pub_static_methods_class_pass" id="r_a229cc680077f9ad2cfa0484a8aa20efe"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe">getGpgIdPath</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td></tr>
 <tr class="memdesc:a229cc680077f9ad2cfa0484a8aa20efe inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
-<tr class="memitem:a4e4099a6ae5113a926fca1a68d8b6c6c inherit pub_static_methods_class_pass" id="r_a4e4099a6ae5113a926fca1a68d8b6c6c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
-<tr class="memdesc:a4e4099a6ae5113a926fca1a68d8b6c6c inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
+<tr class="memitem:a0f50a74f9ba237e4509b47ad1a6bdf6c inherit pub_static_methods_class_pass" id="r_a0f50a74f9ba237e4509b47ad1a6bdf6c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c">skippedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore, QString *recordError=nullptr, <a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a0f50a74f9ba237e4509b47ad1a6bdf6c inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The folder list <a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> passed over on its way up to the one it returns, if it passed one over that a signed store must not.  <br /></td></tr>
+<tr class="memitem:a3e5278aaff6a417a29769b6b98c5c881 inherit pub_static_methods_class_pass" id="r_a3e5278aaff6a417a29769b6b98c5c881"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a3e5278aaff6a417a29769b6b98c5c881">linkedGpgId</a> (const QString &amp;forFile, const QString &amp;passStore) -&gt; std::optional&lt; QString &gt;</td></tr>
+<tr class="memdesc:a3e5278aaff6a417a29769b6b98c5c881 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The link or junction under the name <span class="tt">.gpg-id</span> that <a class="el" href="class_pass.html#a229cc680077f9ad2cfa0484a8aa20efe" title="Get .gpg-id file path for a password file.">getGpgIdPath()</a> skips on its way up from <code class="param">forFile</code>, if it skips one before the list it returns.  <br /></td></tr>
 <tr class="memitem:ae97e7a760b71609933dd3fe3a4629703 inherit pub_static_methods_class_pass" id="r_ae97e7a760b71609933dd3fe3a4629703"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ae97e7a760b71609933dd3fe3a4629703">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
 <tr class="memdesc:ae97e7a760b71609933dd3fe3a4629703 inherit pub_static_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
 <tr class="memitem:af96d0b4d081c5e1801e84f568ccb8d0f inherit pub_static_methods_class_pass" id="r_af96d0b4d081c5e1801e84f568ccb8d0f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#af96d0b4d081c5e1801e84f568ccb8d0f">parseRecipients</a> (const QByteArray &amp;contents, const QString &amp;sourceName) -&gt; QStringList</td></tr>
@@ -238,8 +242,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a63823c10dde60d0694b377699169a5ca inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hold automatic pushes of the store that holds <code class="param">scope</code> (<a class="el" href="class_pass.html#ac41904b0c2ba9f6bca6ef08b4bdb63e1" title="Whether automatic pushes of the current store are held because its last re-encryption did not finish ...">autoPushHeld()</a>): its re-encryption did not finish cleanly.  <br /></td></tr>
 <tr class="memitem:a281b40eaf38860243a3ffaf73c2fd815 inherit pro_methods_class_pass" id="r_a281b40eaf38860243a3ffaf73c2fd815"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a281b40eaf38860243a3ffaf73c2fd815">releaseAutoPush</a> (const QString &amp;folder)</td></tr>
 <tr class="memdesc:a281b40eaf38860243a3ffaf73c2fd815 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release the holds a clean re-encryption of <code class="param">folder</code> covers: those for <code class="param">folder</code> itself and everything under it. Holds for other folders stay.  <br /></td></tr>
-<tr class="memitem:a3aea03014a99498ace9df6c5edaa1dfb inherit pro_methods_class_pass" id="r_a3aea03014a99498ace9df6c5edaa1dfb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a3aea03014a99498ace9df6c5edaa1dfb">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString()) -&gt; bool</td></tr>
-<tr class="memdesc:a3aea03014a99498ace9df6c5edaa1dfb inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a4e4099a6ae5113a926fca1a68d8b6c6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
+<tr class="memitem:add19eb5f11e729d3637ecb6d1b648fe6 inherit pro_methods_class_pass" id="r_add19eb5f11e729d3637ecb6d1b648fe6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#add19eb5f11e729d3637ecb6d1b648fe6">refuseSkippedGpgId</a> (const QString &amp;file, bool signing, const QString &amp;except=QString(), <a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:add19eb5f11e729d3637ecb6d1b648fe6 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to encrypt <code class="param">file</code> when the lookup passed over its folder's own list (<a class="el" href="class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>): the parent's list is not what was signed for it.  <br /></td></tr>
 <tr class="memitem:aa048c50cd2e6fa95033b4c69910e04bb inherit pro_methods_class_pass" id="r_aa048c50cd2e6fa95033b4c69910e04bb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#aa048c50cd2e6fa95033b4c69910e04bb">verifySignedList</a> (const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, const QString &amp;gpgIdFile, QByteArray *contents, QString *why) const -&gt; bool</td></tr>
 <tr class="memdesc:aa048c50cd2e6fa95033b4c69910e04bb inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <code class="param">gpgIdFile</code> is a signed list <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its signature verifies (<a class="el" href="class_gpg_id_signer.html#aa22ae26377898dfe7fb0c780d451719f" title="Read gpgIdFile and verify it against &lt;file&gt;.sig.">GpgIdSigner::verifyFile()</a>), and it is current and bound to the folder it lies in (<a class="el" href="class_gpg_id_generation.html#a0cd43291d31707b298c9e86226a79387" title="Decide about a verified list: its folder against where it sits, its generation against the remembered...">GpgIdGeneration::accept()</a>), so an older authentic list put back, or one signed for another folder, is refused.  <br /></td></tr>
 <tr class="memitem:a36a6f3e2815272e10ff895edc487d388 inherit pro_methods_class_pass" id="r_a36a6f3e2815272e10ff895edc487d388"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a36a6f3e2815272e10ff895edc487d388">queueShow</a> (const QString &amp;file)</td></tr>
@@ -286,22 +290,38 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:ae83239077615fed7e3cd5fccfad9336a" id="r_ae83239077615fed7e3cd5fccfad9336a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae83239077615fed7e3cd5fccfad9336a">insertWritten</a> (const QString &amp;err) const -&gt; bool override</td></tr>
 <tr class="memdesc:ae83239077615fed7e3cd5fccfad9336a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the failed <span class="tt">pass insert</span> wrote its entry before its git step failed. pass does not say, so: the entry's bytes differ from what they were when that insert started to run (a new entry appeared, or an existing one was rewritten), and pass did not say that the encryption broke off (gpg can leave a partial file behind then).  <br /></td></tr>
 <tr class="memitem:a9bab556e0fa41d6cd8d5f9564760e629" id="r_a9bab556e0fa41d6cd8d5f9564760e629"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629">refuseUnverifiedList</a> (const QString &amp;file) -&gt; bool</td></tr>
-<tr class="memdesc:a9bab556e0fa41d6cd8d5f9564760e629"><td class="mdescLeft">&#160;</td><td class="mdescRight">With signing on, refuse to have pass encrypt <code class="param">file</code> when the signed list it would use is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its folder's own list was passed over, the signature does not verify, or the list is older than one this device accepted or signed for another folder.  <br /></td></tr>
+<tr class="memdesc:a9bab556e0fa41d6cd8d5f9564760e629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse to have pass encrypt <code class="param">file</code> when the list it would use is a link (<a class="el" href="#ab61e44281306f4a26cb69cdedab0ff68" title="Refuse to have pass encrypt file when the walk to its list meets a .gpg-id that is a link or junction...">refuseLinkedList()</a>), or, with signing on, not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its folder's own list was passed over, the signature does not verify, or the list is older than one this device accepted or signed for another folder.  <br /></td></tr>
+<tr class="memitem:ab61e44281306f4a26cb69cdedab0ff68" id="r_ab61e44281306f4a26cb69cdedab0ff68"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ab61e44281306f4a26cb69cdedab0ff68">refuseLinkedList</a> (const QString &amp;file, const QString &amp;within=QString(), const QString &amp;except=QString()) -&gt; bool</td></tr>
+<tr class="memdesc:ab61e44281306f4a26cb69cdedab0ff68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse to have pass encrypt <code class="param">file</code> when the walk to its list meets a <span class="tt">.gpg-id</span> that is a link or junction (<a class="el" href="class_pass.html#a3e5278aaff6a417a29769b6b98c5c881" title="The link or junction under the name .gpg-id that getGpgIdPath() skips on its way up from forFile,...">Pass::linkedGpgId()</a>), with or without a signing key: pass would follow it, while <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> shows the list of a folder above it.  <br /></td></tr>
 <tr class="memitem:a23317f24cad6782794cfc83a355af4fa" id="r_a23317f24cad6782794cfc83a355af4fa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a23317f24cad6782794cfc83a355af4fa">storeGit</a> (const QStringList &amp;args, QString *out) -&gt; bool override</td></tr>
 <tr class="memdesc:a23317f24cad6782794cfc83a355af4fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a git command in the store through <span class="tt">pass git</span>, blocking.  <br /></td></tr>
+<tr class="memitem:aa8c33f08cbdeb7d367d1bb9ca3a1435e" id="r_aa8c33f08cbdeb7d367d1bb9ca3a1435e"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa8c33f08cbdeb7d367d1bb9ca3a1435e">repositoryOf</a> (const QString &amp;path) -&gt; QString</td></tr>
+<tr class="memdesc:aa8c33f08cbdeb7d367d1bb9ca3a1435e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Git repository pass commits <code class="param">path</code> in: the store's own, or one a folder in it holds (pass looks for the repository from the path's folder, as git does).  <br /></td></tr>
+<tr class="memitem:ac0f277d51398a8ae8a296a9d0ba97b0b" id="r_ac0f277d51398a8ae8a296a9d0ba97b0b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac0f277d51398a8ae8a296a9d0ba97b0b">statusEntries</a> (const QStringList &amp;args, const QString &amp;repository=QString()) -&gt; QStringList</td></tr>
+<tr class="memdesc:ac0f277d51398a8ae8a296a9d0ba97b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">git status --porcelain -z</span> through <span class="tt">pass git</span>, read: one "XY name" per entry, a rename's old name dropped. Empty without Git, or when git cannot say.  <br /></td></tr>
+<tr class="memitem:a1bc6a926665e62752e23f2f46efc2c90" id="r_a1bc6a926665e62752e23f2f46efc2c90"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1bc6a926665e62752e23f2f46efc2c90">unrecorded</a> (const QStringList &amp;paths, bool ignored) -&gt; QStringList</td></tr>
+<tr class="memdesc:a1bc6a926665e62752e23f2f46efc2c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">What git has not recorded at <code class="param">paths:</code> <span class="tt">git status --porcelain</span> lines, through <span class="tt">pass git</span>. Empty without Git, or when git cannot say.  <br /></td></tr>
+<tr class="memitem:a133e32f08f41de37b18f3aefa3953846" id="r_a133e32f08f41de37b18f3aefa3953846"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a133e32f08f41de37b18f3aefa3953846">refuseUnrecordedChanges</a> (const QStringList &amp;paths, const QStringList &amp;committing) -&gt; bool</td></tr>
+<tr class="memdesc:a133e32f08f41de37b18f3aefa3953846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span>, <span class="tt">cp</span> or <span class="tt">insert</span> when <code class="param">paths</code> hold changes git has not recorded, or anything at all is staged in the repository it commits in. pass stages the folder it wrote with <span class="tt">git add</span> and then commits the whole index, so a plaintext export lying in the folder or staged anywhere, or files a failed pull wrote, would be committed and pushed along with the change. Ignored files are left alone, as <span class="tt">git add</span> leaves them. When the changes include untracked files a file manager writes by itself (<span class="tt">.DS_Store</span>, <span class="tt">Thumbs.db</span>), the message says which <span class="tt">.gitignore</span> lines keep them out for good, for the <span class="tt">.gitignore</span> of each repository that reports them (unless a deeper rule there un-ignores them again).  <br /></td></tr>
+<tr class="memitem:a696202ddae3220f4da5f416fdd350d74" id="r_a696202ddae3220f4da5f416fdd350d74"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a696202ddae3220f4da5f416fdd350d74">reportUnrecorded</a> (const QStringList &amp;paths)</td></tr>
+<tr class="memdesc:a696202ddae3220f4da5f416fdd350d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">After a <span class="tt">pass insert</span>, <span class="tt"><a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span> or <span class="tt">cp</span> that exited 0, say so when git did not record the entries it wrote: pass exits 0 whatever its <span class="tt">git add</span> and commit did (an entry a .gitignore matches, say), and an unrecorded entry is not pushed and a pull may overwrite it.  <br /></td></tr>
+<tr class="memitem:a2fd6d533c480d182529f809467a050eb" id="r_a2fd6d533c480d182529f809467a050eb"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2fd6d533c480d182529f809467a050eb">refuseIgnoredThatMoves</a> (const QString &amp;src, const QString &amp;dest) -&gt; bool</td></tr>
+<tr class="memdesc:a2fd6d533c480d182529f809467a050eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refuse a <span class="tt">pass mv</span> or <span class="tt">cp</span> of the folder <code class="param">src</code> when a file in it that Git ignores would not be ignored where it lands: a rule naming the old place (<span class="tt">/team/export.csv</span>) does not follow the file, and pass stages the new path whole. Entries and recipient lists are not counted: committing those is what pass is for.  <br /></td></tr>
+<tr class="memitem:a2a8695bd55e77964fea9f1d41b62a7e6" id="r_a2a8695bd55e77964fea9f1d41b62a7e6"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a8695bd55e77964fea9f1d41b62a7e6">checkIgnore</a> (const QString &amp;repository, const QStringList &amp;paths, bool verbose, QStringList *fields) -&gt; bool</td></tr>
+<tr class="memdesc:a2a8695bd55e77964fea9f1d41b62a7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><span class="tt">git check-ignore --stdin -z</span> on <code class="param">paths</code> through <span class="tt">pass git</span>.  <br /></td></tr>
 <tr class="memitem:af496429ebd2607ddb2c7c1f6c897d3fa" id="r_af496429ebd2607ddb2c7c1f6c897d3fa"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af496429ebd2607ddb2c7c1f6c897d3fa">refuseUnverifiedTree</a> (const QString &amp;dir, bool onlyListsWithin, const QString &amp;except=QString()) -&gt; bool</td></tr>
-<tr class="memdesc:af496429ebd2607ddb2c7c1f6c897d3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a folder pass is about to re-encrypt in a move or copy: refuse when the signed list of one of its entries (every one pass's walk takes, hidden ones included) is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts where it lies now (as <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass...">refuseUnverifiedList()</a>).  <br /></td></tr>
+<tr class="memdesc:af496429ebd2607ddb2c7c1f6c897d3fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a folder pass is about to re-encrypt in a move or copy: refuse when the signed list of one of its entries (every one pass's walk takes, hidden ones included) is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts where it lies now (as <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a>).  <br /></td></tr>
 <tr class="memitem:af4b087c502643f89c605c2c80e172cda" id="r_af4b087c502643f89c605c2c80e172cda"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#af4b087c502643f89c605c2c80e172cda">listSigner</a> () -&gt; <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a></td></tr>
 <tr class="memdesc:af4b087c502643f89c605c2c80e172cda"><td class="mdescLeft">&#160;</td><td class="mdescRight">The verifier for signed lists, gpg in the store's environment.  <br /></td></tr>
-<tr class="memitem:a465da341035daa9bbdd1c4eb9fc78eb7" id="r_a465da341035daa9bbdd1c4eb9fc78eb7"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a465da341035daa9bbdd1c4eb9fc78eb7">refuseList</a> (const QString &amp;file, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, QSet&lt; QString &gt; &amp;verified, const QString &amp;within=QString(), const QString &amp;except=QString()) -&gt; bool</td></tr>
-<tr class="memdesc:a465da341035daa9bbdd1c4eb9fc78eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The checks of <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass...">refuseUnverifiedList()</a> for <code class="param">file's</code> nearest list, once per list.  <br /></td></tr>
+<tr class="memitem:aa005a98fabdaca8ffbb3c83798263d80" id="r_aa005a98fabdaca8ffbb3c83798263d80"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa005a98fabdaca8ffbb3c83798263d80">refuseList</a> (const QString &amp;file, const <a class="el" href="class_gpg_id_signer.html">GpgIdSigner</a> &amp;signer, QSet&lt; QString &gt; &amp;verified, const QString &amp;within=QString(), const QString &amp;except=QString(), <a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *walks=nullptr) -&gt; bool</td></tr>
+<tr class="memdesc:aa005a98fabdaca8ffbb3c83798263d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">The checks of <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a> for <code class="param">file's</code> nearest list, once per list.  <br /></td></tr>
 <tr class="memitem:a6d7163b691663d92f31ca20886f9979f" id="r_a6d7163b691663d92f31ca20886f9979f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6d7163b691663d92f31ca20886f9979f">onDequeuing</a> (int id, bool completes)</td></tr>
 <tr class="memdesc:a6d7163b691663d92f31ca20886f9979f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The executor is about to run (or drop) its next item: for an insert, take its entry from m_insertQueue and fingerprint it now, not when it was queued, so an earlier queued save of the same entry counts as "before". Kept in m_insertPending for that insert's own completion. For <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span> and <span class="tt">cp</span>, add <span class="tt">--status-fd 2</span> to that one process's PASSWORD_STORE_GPG_OPTS, so <a class="el" href="#acd99293fa04b5b21721a75f3afe0fe2b" title="Finish a process; a linked-folder removal commit (GIT_COMMIT, which RealPass uses for nothing else) i...">finished()</a> can tell whether every entry was re-encrypted (<a class="el" href="#a5e54561fccd028576a58b17731907880" title="Whether a pass init, mv or cp that exited 0 left entries as they were: pass carries on past an entry ...">reencryptFailed()</a>), and move its scope from m_reencryptScopes to m_reencryptPending (dropped when it does not complete).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:aab2302e8117d96d1a1bfefb6e0bc099b" id="r_aab2302e8117d96d1a1bfefb6e0bc099b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aab2302e8117d96d1a1bfefb6e0bc099b">entryFingerprint</a> (const QString &amp;path) -&gt; QByteArray</td></tr>
-<tr class="memdesc:aab2302e8117d96d1a1bfefb6e0bc099b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SHA-256 of the regular file <code class="param">path</code> (opened without following a link or blocking on a FIFO).  <br /></td></tr>
+<tr class="memdesc:aab2302e8117d96d1a1bfefb6e0bc099b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SHA-256 of the size and first 64 KiB of the regular file <code class="param">path</code> (opened without following a link or blocking on a FIFO).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -320,6 +340,9 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Types inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
+<tr class="memitem:a754fdd2e5663b70b6ac8856aa3ae5294 inherit pub_types_class_pass" id="r_a754fdd2e5663b70b6ac8856aa3ae5294"><td class="memItemLeft">using&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> = QHash&lt;QString, <a class="el" href="struct_pass_1_1_skipped_walk.html">SkippedWalk</a>&gt;</td></tr>
+<tr class="memdesc:a754fdd2e5663b70b6ac8856aa3ae5294 inherit pub_types_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_pass_1_1_skipped_walk.html" title="What skippedGpgId() found on its way up from one folder.">SkippedWalk</a> per absolute folder, for one check of many folders.  <br /></td></tr>
 <tr class="inherit_header signals_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signals inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:ad0936452d739b37d9a9e46db356792c2 inherit signals_class_pass" id="r_ad0936452d739b37d9a9e46db356792c2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ad0936452d739b37d9a9e46db356792c2">idle</a> ()</td></tr>
 <tr class="memdesc:ad0936452d739b37d9a9e46db356792c2 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Nothing of the store's runs or waits any more (<a class="el" href="class_pass.html#a66d554f693ae3069381483cb229bb193" title="Whether no gpg, git or pass of this backend runs or waits.">isIdle()</a>).  <br /></td></tr>
@@ -360,6 +383,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass" id="r_a74344f203b81f87b4d42a6281a176db4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
 <tr class="memdesc:a74344f203b81f87b4d42a6281a176db4 inherit signals_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">The newest <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176" title="Search password content for a pattern.">Grep()</a> is over; an empty list means no entry matched.  <br /></td></tr>
 <tr class="inherit_header pub_static_attribs_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Attributes inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
+<tr class="memitem:afeaea2f12756a0e114d66c40c0860da0 inherit pub_static_attribs_class_pass" id="r_afeaea2f12756a0e114d66c40c0860da0"><td class="memItemLeft">static constexpr int&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#afeaea2f12756a0e114d66c40c0860da0">kBlockingPullMs</a> = 30000</td></tr>
+<tr class="memdesc:afeaea2f12756a0e114d66c40c0860da0 inherit pub_static_attribs_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long the pull before an edit may block the window.  <br /></td></tr>
 <tr class="memitem:ae6e6a7bafd0f0753db6bae3205c22c72 inherit pub_static_attribs_class_pass" id="r_ae6e6a7bafd0f0753db6bae3205c22c72"><td class="memItemLeft">static constexpr qint64&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#ae6e6a7bafd0f0753db6bae3205c22c72">kMaxPlaintextBytes</a> = 64LL * 1024 * 1024</td></tr>
 <tr class="memdesc:ae6e6a7bafd0f0753db6bae3205c22c72 inherit pub_static_attribs_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Most bytes of plaintext a gpg decryption may produce.  <br /></td></tr>
 <tr class="inherit_header pro_types_class_pass"><td colspan="2" class="dyn-inherit"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Types inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
@@ -411,7 +436,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Construct a <a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> instance. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00037">37</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00039">39</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-2" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary">
 </div>
@@ -452,7 +477,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Destructor; lets the search workers wind down. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00042">42</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00044">44</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
 <div id="dynsection-4" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary">
 </div>
@@ -490,12 +515,77 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a109a1abbd06afe20ed85c2fc9b46427c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00347">347</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00458">458</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 <div id="dynsection-5" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary">
 </div>
 <div id="dynsection-5-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae0ccd39e17991ddfc3029dde0be8f8ee_cgraph.svg" width="367" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a2a8695bd55e77964fea9f1d41b62a7e6" name="a2a8695bd55e77964fea9f1d41b62a7e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a8695bd55e77964fea9f1d41b62a7e6">&#9670;&#160;</a></span>checkIgnore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::checkIgnore </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>repository</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>paths</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>verbose</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList *</td>          <td class="paramname"><span class="paramname"><em>fields</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">git check-ignore --stdin -z</span> on <code class="param">paths</code> through <span class="tt">pass git</span>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">repository</td><td>Where to ask, as <a class="el" href="#aa8c33f08cbdeb7d367d1bb9ca3a1435e" title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for...">repositoryOf()</a> gives it. </td></tr>
+    <tr><td class="paramname">paths</td><td>Paths relative to that repository. </td></tr>
+    <tr><td class="paramname">verbose</td><td>Whether to ask which rule matched (<span class="tt">-v</span>): four fields per ignored path (rule's file, line, pattern, path). </td></tr>
+    <tr><td class="paramname">fields</td><td>Receives the output's fields: the ignored paths, or the four fields each with <code class="param">verbose</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>false when git could not say. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00648">648</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary">
+</div>
+<div id="dynsection-6-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a2a8695bd55e77964fea9f1d41b62a7e6_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary">
+</div>
+<div id="dynsection-7-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a2a8695bd55e77964fea9f1d41b62a7e6_icgraph.svg" width="100%" height="368"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -544,11 +634,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00615">615</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-6" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01082">1082</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary">
 </div>
-<div id="dynsection-6-content" class="dyncontent hidden">
+<div id="dynsection-8-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a18b236aa64e27f35289a7c51a46abb0e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -577,8 +667,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>A SHA-256 of the regular file <code class="param">path</code> (opened without following a link or blocking on a FIFO). </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>A SHA-256 of the size and first 64 KiB of the regular file <code class="param">path</code> (opened without following a link or blocking on a FIFO). </p>
+<p>Enough to tell a rewritten entry: each encryption starts with a fresh session key. Not the whole file, which a co-writer could pad to gigabytes on the GUI thread's way. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The entry's file. </td></tr>
   </table>
@@ -586,17 +676,17 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The hash; empty when <code class="param">path</code> is no readable regular file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00327">327</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-7" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00779">779</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary">
 </div>
-<div id="dynsection-7-content" class="dyncontent hidden">
+<div id="dynsection-9-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aab2302e8117d96d1a1bfefb6e0bc099b_cgraph.svg" width="408" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-8" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary">
+<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary">
 </div>
-<div id="dynsection-8-content" class="dyncontent hidden">
+<div id="dynsection-10-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aab2302e8117d96d1a1bfefb6e0bc099b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -656,17 +746,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00697">697</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-9" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01171">1171</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary">
 </div>
-<div id="dynsection-9-content" class="dyncontent hidden">
+<div id="dynsection-11-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae210a8e9148b9ea58e229e770b88f19b_cgraph.svg" width="391" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-10" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary">
+<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary">
 </div>
-<div id="dynsection-10-content" class="dyncontent hidden">
+<div id="dynsection-12-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae210a8e9148b9ea58e229e770b88f19b_icgraph.svg" width="619" height="455"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -722,11 +812,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00418">418</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-11" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00878">878</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary">
 </div>
-<div id="dynsection-11-content" class="dyncontent hidden">
+<div id="dynsection-13-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_acd99293fa04b5b21721a75f3afe0fe2b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -774,17 +864,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00534">534</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-12" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01000">1000</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary">
 </div>
-<div id="dynsection-12-content" class="dyncontent hidden">
+<div id="dynsection-14-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a014fcc263c7f47c2ee0163d84b7a3dd7_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-13" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary">
+<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary">
 </div>
-<div id="dynsection-13-content" class="dyncontent hidden">
+<div id="dynsection-15-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a014fcc263c7f47c2ee0163d84b7a3dd7_icgraph.svg" width="399" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -817,11 +907,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00044">44</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-14" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00046">46</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary">
 </div>
-<div id="dynsection-14-content" class="dyncontent hidden">
+<div id="dynsection-16-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aacaf85a65fc1398c356dd44370e5e22f_cgraph.svg" width="566" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -854,18 +944,18 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00064">64</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-15" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00070">70</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary">
 </div>
-<div id="dynsection-15-content" class="dyncontent hidden">
+<div id="dynsection-17-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ac3206e85bc586214e6cc75186cff65c3_cgraph.svg" width="570" height="63"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a6a959408a305cc8dd7cc6c7bd9c17210" name="a6a959408a305cc8dd7cc6c7bd9c17210"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a959408a305cc8dd7cc6c7bd9c17210">&#9670;&#160;</a></span>GitPull_b()</h2>
+<a id="ad218ae042cc6d3322ecf10b4b6c45e6d" name="ad218ae042cc6d3322ecf10b4b6c45e6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad218ae042cc6d3322ecf10b4b6c45e6d">&#9670;&#160;</a></span>GitPull_b()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -876,7 +966,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void RealPass::GitPull_b </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>timeoutMs</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -887,16 +977,22 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pull with rebase. </p>
+<p>Run <span class="tt">pass git pull</span> and wait for it, at most <code class="param">timeoutMs</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeoutMs</td><td>Most milliseconds to wait (<a class="el" href="class_pass.html#afeaea2f12756a0e114d66c40c0860da0" title="How long the pull before an edit may block the window.">Pass::kBlockingPullMs</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implements <a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">Pass</a>.</p>
+<p>Implements <a class="el" href="class_pass.html#a87e2fdc79528cc18678d7c489301af83">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00046">46</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-16" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00048">48</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary">
 </div>
-<div id="dynsection-16-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6a959408a305cc8dd7cc6c7bd9c17210_cgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-18-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ad218ae042cc6d3322ecf10b4b6c45e6d_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -928,11 +1024,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00066">66</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-17" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00072">72</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary">
 </div>
-<div id="dynsection-17-content" class="dyncontent hidden">
+<div id="dynsection-19-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae32fd82fe5e57b2c45df05bfe2991b5b_cgraph.svg" width="576" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -976,11 +1072,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00686">686</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-18" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01160">1160</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary">
 </div>
-<div id="dynsection-18-content" class="dyncontent hidden">
+<div id="dynsection-20-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af2aa9ea3311b5a9470392759e20516b3_cgraph.svg" width="100%" height="523"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1024,11 +1120,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00561">561</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-19" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01027">1027</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary">
 </div>
-<div id="dynsection-19-content" class="dyncontent hidden">
+<div id="dynsection-21-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a12a7e631a5040eee70da06585fe047ba_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1078,11 +1174,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00249">249</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-20" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00695">695</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary">
 </div>
-<div id="dynsection-20-content" class="dyncontent hidden">
+<div id="dynsection-22-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a5b057992bb1c2a55d9febbca4535f830_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1122,11 +1218,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a6097de48d30068d8a73f7dc80ff01de0">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00309">309</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-21" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00761">761</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary">
 </div>
-<div id="dynsection-21-content" class="dyncontent hidden">
+<div id="dynsection-23-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ae83239077615fed7e3cd5fccfad9336a_cgraph.svg" width="628" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1158,17 +1254,17 @@ Additional Inherited Members</h2></td></tr>
 <p>The verifier for signed lists, gpg in the store's environment. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_gpg_id_signer.html" title="The detached signature on a store&#39;s .gpg-id: whether the configured signing key is usable,...">GpgIdSigner</a> with the configured signing keys. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00104">104</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-22" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00110">110</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary">
 </div>
-<div id="dynsection-22-content" class="dyncontent hidden">
+<div id="dynsection-24-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af4b087c502643f89c605c2c80e172cda_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-23" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary">
+<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary">
 </div>
-<div id="dynsection-23-content" class="dyncontent hidden">
+<div id="dynsection-25-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af4b087c502643f89c605c2c80e172cda_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1218,11 +1314,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00611">611</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-24" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01078">1078</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-26-summary" class="dynsummary">
 </div>
-<div id="dynsection-24-content" class="dyncontent hidden">
+<div id="dynsection-26-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_acbbb510bd58cdceae53d34985453fc83_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1264,17 +1360,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00274">274</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-25" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00726">726</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary">
 </div>
-<div id="dynsection-25-content" class="dyncontent hidden">
+<div id="dynsection-27-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6d7163b691663d92f31ca20886f9979f_cgraph.svg" width="630" height="143"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-26" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary">
+<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary">
 </div>
-<div id="dynsection-26-content" class="dyncontent hidden">
+<div id="dynsection-28-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a6d7163b691663d92f31ca20886f9979f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1334,17 +1430,17 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00629">629</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-27" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01096">1096</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary">
 </div>
-<div id="dynsection-27-content" class="dyncontent hidden">
+<div id="dynsection-29-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7dc41cbf604316f975dfb6dc2786a794_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-28" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary">
+<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary">
 </div>
-<div id="dynsection-28-content" class="dyncontent hidden">
+<div id="dynsection-30-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7dc41cbf604316f975dfb6dc2786a794_icgraph.svg" width="384" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1387,18 +1483,18 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The store-relative name. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00619">619</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-29" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l01086">1086</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary">
 </div>
-<div id="dynsection-29-content" class="dyncontent hidden">
+<div id="dynsection-31-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7f4e533ac300c1a6acbecf7c54642719_cgraph.svg" width="355" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-30" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary">
+<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary">
 </div>
-<div id="dynsection-30-content" class="dyncontent hidden">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7f4e533ac300c1a6acbecf7c54642719_icgraph.svg" width="588" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-32-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a7f4e533ac300c1a6acbecf7c54642719_icgraph.svg" width="588" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1440,18 +1536,130 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true on a failure; false without any status line, since then the option did not reach gpg and there is nothing to judge by. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00465">465</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-31" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00931">931</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary">
 </div>
-<div id="dynsection-31-content" class="dyncontent hidden">
+<div id="dynsection-33-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a5e54561fccd028576a58b17731907880_icgraph.svg" width="384" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a465da341035daa9bbdd1c4eb9fc78eb7" name="a465da341035daa9bbdd1c4eb9fc78eb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a465da341035daa9bbdd1c4eb9fc78eb7">&#9670;&#160;</a></span>refuseList()</h2>
+<a id="a2fd6d533c480d182529f809467a050eb" name="a2fd6d533c480d182529f809467a050eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fd6d533c480d182529f809467a050eb">&#9670;&#160;</a></span>refuseIgnoredThatMoves()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::refuseIgnoredThatMoves </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>src</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>dest</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse a <span class="tt">pass mv</span> or <span class="tt">cp</span> of the folder <code class="param">src</code> when a file in it that Git ignores would not be ignored where it lands: a rule naming the old place (<span class="tt">/team/export.csv</span>) does not follow the file, and pass stages the new path whole. Entries and recipient lists are not counted: committing those is what pass is for. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>The folder moved or copied (anything else passes). </td></tr>
+    <tr><td class="paramname">dest</td><td>Where to, as handed to pass: an existing folder takes it in. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00564">564</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary">
+</div>
+<div id="dynsection-34-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a2fd6d533c480d182529f809467a050eb_cgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary">
+</div>
+<div id="dynsection-35-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a2fd6d533c480d182529f809467a050eb_icgraph.svg" width="638" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="ab61e44281306f4a26cb69cdedab0ff68" name="ab61e44281306f4a26cb69cdedab0ff68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab61e44281306f4a26cb69cdedab0ff68">&#9670;&#160;</a></span>refuseLinkedList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::refuseLinkedList </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>within</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>except</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse to have pass encrypt <code class="param">file</code> when the walk to its list meets a <span class="tt">.gpg-id</span> that is a link or junction (<a class="el" href="class_pass.html#a3e5278aaff6a417a29769b6b98c5c881" title="The link or junction under the name .gpg-id that getGpgIdPath() skips on its way up from forFile,...">Pass::linkedGpgId()</a>), with or without a signing key: pass would follow it, while <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> shows the list of a folder above it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The entry or folder. </td></tr>
+    <tr><td class="paramname">within</td><td>When set, only a link under this folder (absolute, cleaned, with a trailing "/") is refused. </td></tr>
+    <tr><td class="paramname">except</td><td>A list about to be written (<span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>'s own), not refused. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00150">150</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary">
+</div>
+<div id="dynsection-36-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ab61e44281306f4a26cb69cdedab0ff68_cgraph.svg" width="388" height="91"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-37-summary" class="dynsummary">
+</div>
+<div id="dynsection-37-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ab61e44281306f4a26cb69cdedab0ff68_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aa005a98fabdaca8ffbb3c83798263d80" name="aa005a98fabdaca8ffbb3c83798263d80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa005a98fabdaca8ffbb3c83798263d80">&#9670;&#160;</a></span>refuseList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1482,7 +1690,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>except</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; bool</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>except</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_pass.html#a754fdd2e5663b70b6ac8856aa3ae5294">SkippedWalks</a> *</td>          <td class="paramname"><span class="paramname"><em>walks</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; bool</td>
         </tr>
       </table>
   </td>
@@ -1492,7 +1705,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>The checks of <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass...">refuseUnverifiedList()</a> for <code class="param">file's</code> nearest list, once per list. </p>
+<p>The checks of <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a> for <code class="param">file's</code> nearest list, once per list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>The entry. </td></tr>
@@ -1500,23 +1713,77 @@ Additional Inherited Members</h2></td></tr>
     <tr><td class="paramname">verified</td><td>The lists already found good; extended. </td></tr>
     <tr><td class="paramname">within</td><td>When set, only a list under this folder (absolute, cleaned, with a trailing "/") is verified; the skipped-list check applies regardless. </td></tr>
     <tr><td class="paramname">except</td><td>A list about to be written, neither verified nor refused for being missing. </td></tr>
+    <tr><td class="paramname">walks</td><td>Passed on to <a class="el" href="class_pass.html#a0f50a74f9ba237e4509b47ad1a6bdf6c" title="The folder list getGpgIdPath() passed over on its way up to the one it returns, if it passed one over...">skippedGpgId()</a>, for a check of many folders; null for none. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00115">115</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-32" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00121">121</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary">
 </div>
-<div id="dynsection-32-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-38-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aa005a98fabdaca8ffbb3c83798263d80_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-33" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary">
+<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary">
 </div>
-<div id="dynsection-33-content" class="dyncontent hidden">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a465da341035daa9bbdd1c4eb9fc78eb7_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div id="dynsection-39-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aa005a98fabdaca8ffbb3c83798263d80_icgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a133e32f08f41de37b18f3aefa3953846" name="a133e32f08f41de37b18f3aefa3953846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133e32f08f41de37b18f3aefa3953846">&#9670;&#160;</a></span>refuseUnrecordedChanges()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::refuseUnrecordedChanges </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>paths</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>committing</em></span>&#160;) -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refuse a <span class="tt">pass <a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span>, <span class="tt">cp</span> or <span class="tt">insert</span> when <code class="param">paths</code> hold changes git has not recorded, or anything at all is staged in the repository it commits in. pass stages the folder it wrote with <span class="tt">git add</span> and then commits the whole index, so a plaintext export lying in the folder or staged anywhere, or files a failed pull wrote, would be committed and pushed along with the change. Ignored files are left alone, as <span class="tt">git add</span> leaves them. When the changes include untracked files a file manager writes by itself (<span class="tt">.DS_Store</span>, <span class="tt">Thumbs.db</span>), the message says which <span class="tt">.gitignore</span> lines keep them out for good, for the <span class="tt">.gitignore</span> of each repository that reports them (unless a deeper rule there un-ignores them again). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td>Absolute paths in the store that pass will stage; empty for none (an insert stages its own entry alone). </td></tr>
+    <tr><td class="paramname">committing</td><td>Absolute paths pass commits: the index of each one's repository (see <a class="el" href="#aa8c33f08cbdeb7d367d1bb9ca3a1435e" title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for...">repositoryOf()</a>) is checked. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00471">471</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary">
+</div>
+<div id="dynsection-40-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a133e32f08f41de37b18f3aefa3953846_cgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary">
+</div>
+<div id="dynsection-41-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a133e32f08f41de37b18f3aefa3953846_icgraph.svg" width="635" height="168"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1544,7 +1811,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>With signing on, refuse to have pass encrypt <code class="param">file</code> when the signed list it would use is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its folder's own list was passed over, the signature does not verify, or the list is older than one this device accepted or signed for another folder. </p>
+<p>Refuse to have pass encrypt <code class="param">file</code> when the list it would use is a link (<a class="el" href="#ab61e44281306f4a26cb69cdedab0ff68" title="Refuse to have pass encrypt file when the walk to its list meets a .gpg-id that is a link or junction...">refuseLinkedList()</a>), or, with signing on, not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts: its folder's own list was passed over, the signature does not verify, or the list is older than one this device accepted or signed for another folder. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file</td><td>The entry (or the place a move or copy writes to). </td></tr>
@@ -1553,17 +1820,17 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00144">144</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-34" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00174">174</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary">
 </div>
-<div id="dynsection-34-content" class="dyncontent hidden">
+<div id="dynsection-42-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a9bab556e0fa41d6cd8d5f9564760e629_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-35" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary">
+<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary">
 </div>
-<div id="dynsection-35-content" class="dyncontent hidden">
+<div id="dynsection-43-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a9bab556e0fa41d6cd8d5f9564760e629_icgraph.svg" width="650" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1601,7 +1868,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>For a folder pass is about to re-encrypt in a move or copy: refuse when the signed list of one of its entries (every one pass's walk takes, hidden ones included) is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts where it lies now (as <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="With signing on, refuse to have pass encrypt file when the signed list it would use is not one QtPass...">refuseUnverifiedList()</a>). </p>
+<p>For a folder pass is about to re-encrypt in a move or copy: refuse when the signed list of one of its entries (every one pass's walk takes, hidden ones included) is not one <a class="el" href="class_qt_pass.html" title="Application-level glue between the pass backends and whatever shows their results: turns the backends...">QtPass</a> accepts where it lies now (as <a class="el" href="#a9bab556e0fa41d6cd8d5f9564760e629" title="Refuse to have pass encrypt file when the list it would use is a link (refuseLinkedList()),...">refuseUnverifiedList()</a>). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dir</td><td>The folder moved or copied, or the existing folder written into. Each of its folders' lists counts, used by an entry yet or not: a copy merges into a folder of the same name, so lists on either side meet the other side's entries. </td></tr>
@@ -1612,17 +1879,17 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether it was refused (and the user told). </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00187">187</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-36" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00221">221</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary">
 </div>
-<div id="dynsection-36-content" class="dyncontent hidden">
+<div id="dynsection-44-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af496429ebd2607ddb2c7c1f6c897d3fa_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div id="dynsection-37" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-37-summary" class="dynsummary">
+<div id="dynsection-45" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-45-summary" class="dynsummary">
 </div>
-<div id="dynsection-37-content" class="dyncontent hidden">
+<div id="dynsection-45-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_af496429ebd2607ddb2c7c1f6c897d3fa_icgraph.svg" width="654" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1666,11 +1933,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00339">339</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-38" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00799">799</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-46" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-46-summary" class="dynsummary">
 </div>
-<div id="dynsection-38-content" class="dyncontent hidden">
+<div id="dynsection-46-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a0fcac7c5005e6d1a0d09373b5476ca9c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1718,18 +1985,113 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00499">499</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-39" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00965">965</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-47" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-47-summary" class="dynsummary">
 </div>
-<div id="dynsection-39-content" class="dyncontent hidden">
+<div id="dynsection-47-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a0378bfc9a890a1a72037432f59a83aba_cgraph.svg" width="436" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-40" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary">
+<div id="dynsection-48" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary">
 </div>
-<div id="dynsection-40-content" class="dyncontent hidden">
+<div id="dynsection-48-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a0378bfc9a890a1a72037432f59a83aba_icgraph.svg" width="390" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a696202ddae3220f4da5f416fdd350d74" name="a696202ddae3220f4da5f416fdd350d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a696202ddae3220f4da5f416fdd350d74">&#9670;&#160;</a></span>reportUnrecorded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RealPass::reportUnrecorded </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>paths</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>After a <span class="tt">pass insert</span>, <span class="tt"><a class="el" href="class_pass.html#aa0971162be08e9090e278b9f0a0aae09" title="Initialize the Pass instance with a settings snapshot.">init</a></span>, <span class="tt">mv</span> or <span class="tt">cp</span> that exited 0, say so when git did not record the entries it wrote: pass exits 0 whatever its <span class="tt">git add</span> and commit did (an entry a .gitignore matches, say), and an unrecorded entry is not pushed and a pull may overwrite it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td>Absolute paths the change wrote. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00545">545</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-49" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-49-summary" class="dynsummary">
+</div>
+<div id="dynsection-49-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a696202ddae3220f4da5f416fdd350d74_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-50" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary">
+</div>
+<div id="dynsection-50-content" class="dyncontent hidden">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a696202ddae3220f4da5f416fdd350d74_icgraph.svg" width="399" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aa8c33f08cbdeb7d367d1bb9ca3a1435e" name="aa8c33f08cbdeb7d367d1bb9ca3a1435e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8c33f08cbdeb7d367d1bb9ca3a1435e">&#9670;&#160;</a></span>repositoryOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::repositoryOf </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt; QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The Git repository pass commits <code class="param">path</code> in: the store's own, or one a folder in it holds (pass looks for the repository from the path's folder, as git does). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>An absolute path in the store; it need not exist yet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The repository's folder relative to the store, empty for the store's own (or when git cannot say). </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00314">314</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-51" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary">
+</div>
+<div id="dynsection-51-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aa8c33f08cbdeb7d367d1bb9ca3a1435e_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-52" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-52-summary" class="dynsummary">
+</div>
+<div id="dynsection-52-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aa8c33f08cbdeb7d367d1bb9ca3a1435e_icgraph.svg" width="100%" height="465"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1759,17 +2121,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Once the last queued init, move or copy has completed, make the push asked for meanwhile (<a class="el" href="#ae32fd82fe5e57b2c45df05bfe2991b5b" title="Push changes to remote.">GitPush()</a>). An automatic one is dropped while a re-encryption in this store is held, and the status line says why; one asked for by hand goes. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00078">78</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-41" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00084">84</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-53" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-53-summary" class="dynsummary">
 </div>
-<div id="dynsection-41-content" class="dyncontent hidden">
+<div id="dynsection-53-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aaaf6e02c8547397a5b1da80e45cebea2_cgraph.svg" width="646" height="207"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-42" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary">
+<div id="dynsection-54" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-54-summary" class="dynsummary">
 </div>
-<div id="dynsection-42-content" class="dyncontent hidden">
+<div id="dynsection-54-content" class="dyncontent hidden">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_aaaf6e02c8547397a5b1da80e45cebea2_icgraph.svg" width="404" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1808,12 +2170,65 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00095">95</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-43" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00101">101</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-55" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-55-summary" class="dynsummary">
 </div>
-<div id="dynsection-43-content" class="dyncontent hidden">
+<div id="dynsection-55-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a63da21db00da709ae5aa8f7a992e16e1_cgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ac0f277d51398a8ae8a296a9d0ba97b0b" name="ac0f277d51398a8ae8a296a9d0ba97b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f277d51398a8ae8a296a9d0ba97b0b">&#9670;&#160;</a></span>statusEntries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::statusEntries </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>repository</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QString()</span>&#160;) -&gt; QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><span class="tt">git status --porcelain -z</span> through <span class="tt">pass git</span>, read: one "XY name" per entry, a rename's old name dropped. Empty without Git, or when git cannot say. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>Further status arguments (options, then a pathspec relative to <code class="param">repository</code>). </td></tr>
+    <tr><td class="paramname">repository</td><td>The repository to ask, as <a class="el" href="#aa8c33f08cbdeb7d367d1bb9ca3a1435e" title="The Git repository pass commits path in: the store&#39;s own, or one a folder in it holds (pass looks for...">repositoryOf()</a> gives it; its entries are named from the store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The entries. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00350">350</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-56" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-56-summary" class="dynsummary">
+</div>
+<div id="dynsection-56-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ac0f277d51398a8ae8a296a9d0ba97b0b_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-57" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-57-summary" class="dynsummary">
+</div>
+<div id="dynsection-57-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_ac0f277d51398a8ae8a296a9d0ba97b0b_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1857,12 +2272,71 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_pass.html#a5cb7bb449be8c12124b3c3be6d94e3a7">Pass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00237">237</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
-<div id="dynsection-44" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-44-summary" class="dynsummary">
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00286">286</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-58" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-58-summary" class="dynsummary">
 </div>
-<div id="dynsection-44-content" class="dyncontent hidden">
+<div id="dynsection-58-content" class="dyncontent hidden">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a23317f24cad6782794cfc83a355af4fa_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-59" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-59-summary" class="dynsummary">
+</div>
+<div id="dynsection-59-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a23317f24cad6782794cfc83a355af4fa_icgraph.svg" width="100%" height="465"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a1bc6a926665e62752e23f2f46efc2c90" name="a1bc6a926665e62752e23f2f46efc2c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bc6a926665e62752e23f2f46efc2c90">&#9670;&#160;</a></span>unrecorded()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto RealPass::unrecorded </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>paths</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>ignored</em></span>&#160;) -&gt; QStringList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>What git has not recorded at <code class="param">paths:</code> <span class="tt">git status --porcelain</span> lines, through <span class="tt">pass git</span>. Empty without Git, or when git cannot say. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paths</td><td>Absolute paths in the store. </td></tr>
+    <tr><td class="paramname">ignored</td><td>Whether ignored files are listed too (as <span class="tt">!!</span>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The status entries, "XY name" each. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="realpass_8cpp_source.html#l00384">384</a> of file <a class="el" href="realpass_8cpp_source.html">realpass.cpp</a>.</p>
+<div id="dynsection-60" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-60-summary" class="dynsummary">
+</div>
+<div id="dynsection-60-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a1bc6a926665e62752e23f2f46efc2c90_cgraph.svg" width="100%" height="407"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-61" class="dynheader closed"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-61-summary" class="dynsummary">
+</div>
+<div id="dynsection-61-content" class="dyncontent hidden">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_real_pass_a1bc6a926665e62752e23f2f46efc2c90_icgraph.svg" width="100%" height="446"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1890,7 +2364,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>One of those pushes was asked for by hand: it goes despite a hold. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00228">228</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00338">338</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -1941,7 +2415,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The insert whose completion is being handled. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00216">216</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00326">326</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -1966,7 +2440,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The inserts that left the queue and have yet to complete, in the order their completions come: a failed start's error is posted, and the next insert may start before it arrives. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00214">214</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00324">324</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -1992,7 +2466,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>The entries of the queued inserts, oldest first. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00210">210</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00320">320</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2042,7 +2516,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>A push was asked for while an init, move or copy was queued or running: <a class="el" href="#aaaf6e02c8547397a5b1da80e45cebea2" title="Once the last queued init, move or copy has completed, make the push asked for meanwhile (GitPush())....">sendDeferredPush()</a> makes it once they have completed. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00226">226</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00336">336</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2067,7 +2541,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>The scopes of the inits, moves and copies that left the queue and have yet to complete, in completion order; one the executor drops never gets here, so it cannot pair with a later command's completion. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00223">223</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00333">333</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>
@@ -2092,7 +2566,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 <p>What each queued init, move or copy re-encrypts (its folder, or the destination), oldest first, for the push hold. </p>
 
-<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00219">219</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="realpass_8h_source.html#l00329">329</a> of file <a class="el" href="realpass_8h_source.html">realpass.h</a>.</p>
 
 </div>
 </div>

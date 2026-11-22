@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <li>m_currentEntry&#160;:&#160;<a class="el" href="class_config_dialog.html#a514c0cbe5f770c2eef82bee516c4672d">ConfigDialog</a></li>
 <li>m_currentTemplateName&#160;:&#160;<a class="el" href="class_password_dialog.html#af86a69cb846a1c3ae7721eb27c723a20">PasswordDialog</a></li>
 <li>m_customPasswordChars&#160;:&#160;<a class="el" href="class_config_dialog.html#a8bccd621f9d7c7eb7058e7608a106a02">ConfigDialog</a></li>
-<li>m_deferredPushByHand&#160;:&#160;<a class="el" href="class_real_pass.html#ac7ab6d4da6791ca6ead581498ec492a0">RealPass</a></li>
+<li>m_deferredPushByHand&#160;:&#160;<a class="el" href="class_imitate_pass.html#aeb5b53ed31b2046ee809d647fd4ab748">ImitatePass</a>, <a class="el" href="class_real_pass.html#ac7ab6d4da6791ca6ead581498ec492a0">RealPass</a></li>
 <li>m_dir&#160;:&#160;<a class="el" href="class_users_dialog.html#a486ab9a602907d6110dceaed9a7b3138">UsersDialog</a></li>
 <li>m_displayPanel&#160;:&#160;<a class="el" href="class_main_window.html#a358125b8efbfbe4b22eecd2716c2dc7c">MainWindow</a></li>
 <li>m_drainCheckPosted&#160;:&#160;<a class="el" href="class_executor.html#a68704b9a35398e88fa70ae00600d70a5">Executor</a></li>
@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <li>m_importedKeyId&#160;:&#160;<a class="el" href="class_import_key_dialog.html#a7eacdb5d2d478f846bbe54be938e1538">ImportKeyDialog</a></li>
 <li>m_initOnAccept&#160;:&#160;<a class="el" href="class_users_dialog.html#a09489f1a683129c5dad8386ae9155bd6">UsersDialog</a></li>
 <li>m_initSucceeded&#160;:&#160;<a class="el" href="class_main_window.html#accfd1464f92298d292b7420d9e8aad23">MainWindow</a></li>
+<li>m_inProgressUpdate&#160;:&#160;<a class="el" href="class_main_window.html#ac51178ad833df0918d3666cfc05ff7af">MainWindow</a></li>
 <li>m_insertDone&#160;:&#160;<a class="el" href="class_real_pass.html#a65ad5fa1183824c29a219aeca72ae112">RealPass</a></li>
 <li>m_insertPending&#160;:&#160;<a class="el" href="class_real_pass.html#a257df61a55c93d151c12a8269dae3504">RealPass</a></li>
 <li>m_insertPlaced&#160;:&#160;<a class="el" href="class_imitate_pass.html#a18b7e9be840532e83641ffada699e7ce">ImitatePass</a></li>
@@ -191,9 +192,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <li>m_linkCommits&#160;:&#160;<a class="el" href="class_real_pass.html#ac7c17226af0d3366f2e9388a08475839">RealPass</a></li>
 <li>m_list&#160;:&#160;<a class="el" href="class_key_wizard_page.html#a11a1086c1ece6a1fdeff02bbd06deac2">KeyWizardPage</a></li>
 <li>m_loadingForm&#160;:&#160;<a class="el" href="class_config_dialog.html#a366cccaf889a9aba07bd47747b3b54b4">ConfigDialog</a></li>
-<li>m_markedSecrets&#160;:&#160;<a class="el" href="class_password_display_panel.html#a3be383ffb43c6be89ce0d45f040cc27c">PasswordDisplayPanel</a></li>
+<li>m_markedSecrets&#160;:&#160;<a class="el" href="class_password_display_panel.html#abfa6aa7c1cdc17bf57b1156baffb1cb1">PasswordDisplayPanel</a></li>
 <li>m_maxPlaintext&#160;:&#160;<a class="el" href="class_rnp_crypto.html#a60b0a0882191358396fee29e7b54a0aa">RnpCrypto</a></li>
 <li>m_mode&#160;:&#160;<a class="el" href="class_grep_search_controller.html#aef42d6b79cd42f2129e0c55714916434">GrepSearchController</a></li>
+<li>m_movedToReencrypt&#160;:&#160;<a class="el" href="class_imitate_pass.html#a6fe07a85b0487c7e6e6802cc5a20fbf3">ImitatePass</a></li>
+<li>m_name&#160;:&#160;<a class="el" href="class_field_label.html#af3e1444936ccdc63ca95c78e509383fc">FieldLabel</a></li>
 <li>m_nameTip&#160;:&#160;<a class="el" href="class_config_dialog.html#a35bda88aa17a961c5683190d99d374f7">ConfigDialog</a></li>
 <li>m_newEntryFolder&#160;:&#160;<a class="el" href="class_password_dialog.html#a2de8de1813e3f297d8f739b2b2793122">PasswordDialog</a></li>
 <li>m_otherCopies&#160;:&#160;<a class="el" href="class_clipboard_manager.html#a4a616d713f5cf757c429bcca6798fa4d">ClipboardManager</a></li>
@@ -213,6 +216,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <li>m_peeking&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#a40df1a3e7e3238b2e4874f859e586b25">MenuBarPeek</a></li>
 <li>m_pendingErrors&#160;:&#160;<a class="el" href="class_executor.html#a5c333622022bd27ab87b0c581496f66f">Executor</a></li>
 <li>m_pendingInserts&#160;:&#160;<a class="el" href="class_imitate_pass.html#ad632c7dbec6721c349ea86e21a75c744">ImitatePass</a></li>
+<li>m_pendingMoves&#160;:&#160;<a class="el" href="class_imitate_pass.html#a7ff37a378b825fbec75268ce057be8a7">ImitatePass</a></li>
 <li>m_pendingOpen&#160;:&#160;<a class="el" href="class_main_window.html#a2d2dba0de7041c5de5f34b7e114b9ab9">MainWindow</a></li>
 <li>m_pendingShows&#160;:&#160;<a class="el" href="class_pass.html#af310a136a6d9ec695c490215eef4d937">Pass</a></li>
 <li>m_preselect&#160;:&#160;<a class="el" href="class_users_dialog.html#aaf2a368116ead1381e833f52f4bb7cf5">UsersDialog</a></li>
@@ -223,9 +227,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <li>m_processOutput&#160;:&#160;<a class="el" href="class_main_window.html#a4ebc3150bc50eb101d504fbedff4c419">MainWindow</a></li>
 <li>m_progress&#160;:&#160;<a class="el" href="class_otp_code_widget.html#a3c15f1bb8dd1ad1eff5a7012528bddfa">OtpCodeWidget</a></li>
 <li>m_progressIndicator&#160;:&#160;<a class="el" href="class_keygen_dialog.html#a1d32ce07e0d9fbdc89d2caea7a4f8e8d">KeygenDialog</a></li>
+<li>m_progressToDelete&#160;:&#160;<a class="el" href="class_main_window.html#aabb980ba180c68b1a3aba7e63708160b">MainWindow</a></li>
 <li>m_proxy&#160;:&#160;<a class="el" href="class_store_tree.html#ab5f28d041e80d41330917468c30fdc56">StoreTree</a></li>
 <li>m_pushAfterReencrypt&#160;:&#160;<a class="el" href="class_imitate_pass.html#a90dccd5f756bcd0f65226f1afde5b2b3">ImitatePass</a>, <a class="el" href="class_real_pass.html#a23beacc4b226d2e34d192f1b04757d56">RealPass</a></li>
 <li>m_pushIsAutomatic&#160;:&#160;<a class="el" href="class_pass.html#aa4d5368fd95795e3379d365b4bbcbcd3">Pass</a></li>
+<li>m_qrPopup&#160;:&#160;<a class="el" href="class_qt_pass.html#ae6de998eb4def80948028666b52b8d52">QtPass</a></li>
 <li>m_qtPass&#160;:&#160;<a class="el" href="class_main_window.html#ae772473e8fa0047f5db5bcb410dc88a1">MainWindow</a></li>
 <li>m_recheckSigners&#160;:&#160;<a class="el" href="class_config_dialog.html#a93c7c680886d37da60613c14c9a0b236">ConfigDialog</a></li>
 <li>m_reencryptActive&#160;:&#160;<a class="el" href="class_imitate_pass.html#a41666e690d1fce6474bed3a5f6485314">ImitatePass</a></li>
@@ -256,6 +262,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('functions_vars
 <li>m_templateShortcut&#160;:&#160;<a class="el" href="class_password_dialog.html#a78ace54e705a7900dfaa482b8a3abc68">PasswordDialog</a></li>
 <li>m_templating&#160;:&#160;<a class="el" href="class_password_dialog.html#a0babf3db47a8da35da550c991be84f0c">PasswordDialog</a></li>
 <li>m_themeSwitched&#160;:&#160;<a class="el" href="class_main_window.html#a6e89bee83cd89b0e4e08ca966ee6c898">MainWindow</a></li>
+<li>m_timeoutMs&#160;:&#160;<a class="el" href="class_import_key_dialog.html#a7d31f02d606027453ef8d109d2a53a73">ImportKeyDialog</a></li>
 <li>m_toggle&#160;:&#160;<a class="el" href="class_menu_bar_peek.html#ae517f5f7fb38d88a1ed41d278a60eed4">MenuBarPeek</a></li>
 <li>m_transaction&#160;:&#160;<a class="el" href="class_imitate_pass.html#a8900e1dace8bc434e07b57d88901dc3d">ImitatePass</a>, <a class="el" href="class_imitate_pass_1_1_transaction_helper.html#abf7c83b574c66cc8513ba84d7dd7d893">ImitatePass::TransactionHelper</a></li>
 <li>m_transactionOutput&#160;:&#160;<a class="el" href="class_imitate_pass.html#a1fb9d35f19a5a7b0ff56c3e1e4b398ee">ImitatePass</a></li>

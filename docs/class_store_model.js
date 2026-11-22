@@ -16,6 +16,7 @@ var class_store_model =
     [ "mimeData", "class_store_model.html#a8a6c01f4d7883133d69730ceb1e97a09", null ],
     [ "mimeTypes", "class_store_model.html#a40620d3b37bb04b06b999308bf2ee137", null ],
     [ "parseDropData", "class_store_model.html#a3f12de1e5eb2337e3165aa838655e5a5", null ],
+    [ "pathOf", "class_store_model.html#a571b6ec5b8d818ad6b86d4f98091b513", null ],
     [ "performDrop", "class_store_model.html#ac66256efac2ec5e6924d8694b7a718c5", null ],
     [ "rootIndexFor", "class_store_model.html#a9830413c7cf960e473adfa98311c3bcd", null ],
     [ "setModelAndStore", "class_store_model.html#a71787f93027b50575cfbdcbb1d8de071", null ],
@@ -24,6 +25,7 @@ var class_store_model =
     [ "showThis", "class_store_model.html#a3f87cb8b3ca0d20117f37386e4701691", null ],
     [ "supportedDragActions", "class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648", null ],
     [ "supportedDropActions", "class_store_model.html#af6982f1562988c413ae9e95e87a713a1", null ],
+    [ "wordsFilter", "class_store_model.html#a4a762ee2bc32b9ddab12901d0bff75d1", null ],
     [ "fs", "class_store_model.html#af094c70fe862af6d3e2023938b745a44", null ],
     [ "m_pass", "class_store_model.html#a67138cb92b226ee1dfe186e4b1707280", null ],
     [ "store", "class_store_model.html#a98ebce85d60d3372420113fe7e714428", null ]

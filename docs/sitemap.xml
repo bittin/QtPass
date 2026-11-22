@@ -818,6 +818,12 @@
     <loc>https://qtpass.org/docs/class_imitate_pass_1_1_transaction_helper-members.html</loc>
   </url>
   <url>
+    <loc>https://qtpass.org/docs/struct_imitate_pass_1_1_pending_move.html</loc>
+  </url>
+  <url>
+    <loc>https://qtpass.org/docs/struct_imitate_pass_1_1_pending_move-members.html</loc>
+  </url>
+  <url>
     <loc>https://qtpass.org/docs/struct_imitate_pass_1_1_pending_insert.html</loc>
   </url>
   <url>
@@ -906,6 +912,12 @@
   </url>
   <url>
     <loc>https://qtpass.org/docs/class_pass-members.html</loc>
+  </url>
+  <url>
+    <loc>https://qtpass.org/docs/struct_pass_1_1_skipped_walk.html</loc>
+  </url>
+  <url>
+    <loc>https://qtpass.org/docs/struct_pass_1_1_skipped_walk-members.html</loc>
   </url>
   <url>
     <loc>https://qtpass.org/docs/struct_pass_1_1_recipients_for_editing.html</loc>
@@ -1464,6 +1476,9 @@
   </url>
   <url>
     <loc>https://qtpass.org/docs/functions_vars_w.html</loc>
+  </url>
+  <url>
+    <loc>https://qtpass.org/docs/functions_type.html</loc>
   </url>
   <url>
     <loc>https://qtpass.org/docs/functions_type.html</loc>
